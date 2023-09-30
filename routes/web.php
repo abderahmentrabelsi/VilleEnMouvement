@@ -15,6 +15,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
+use App\Http\Controllers\DatabaseTestController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,9 @@ use App\Http\Controllers\ChartsController;
 
 // Main Page Route
 Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+
+Route::get('/test-database-connection', [DatabaseTestController::class, 'testConnection']);
+
 
 
 /* Route Dashboards */
