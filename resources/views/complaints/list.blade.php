@@ -43,12 +43,11 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('complaints.edit', $complaint->id) }}" class="btn btn-primary">Edit</a>
-                                        <button type="submit" class="btn btn-danger" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $complaint->id }}').submit();">Delete</button>
-                                        <form id="delete-form-{{ $complaint->id }}" action="{{ route('complaints.destroy', $complaint->id) }}" method="POST" style="display: none;">
+                                        <button type="button" class="btn btn-danger" onclick="confirmDelete({{ $complaint->id }})">Delete</button>
+                                        <form id="delete-form-{{ $complaint->id }}" action="{{ route('complaints.destroy', $complaint->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                         </form>
-
                                     </td>
                                 </tr>
                             @endforeach
@@ -81,10 +80,14 @@
 </script>
 
 
+
+
 @section('vendor-script')
     <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
     <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
 @endsection
 @section('page-script')
     <script src="{{ asset(mix('js/scripts/extensions/ext-component-sweet-alerts.js')) }}"></script>
+    <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
+    <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
 @endsection
