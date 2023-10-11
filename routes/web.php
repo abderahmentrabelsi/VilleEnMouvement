@@ -17,6 +17,9 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\DatabaseTestController;
 use App\Http\Controllers\ProductController;
+//IMPORT WISHLIST CONTROLLER
+use App\Http\Controllers\WishlistController;
+
 
 
 /*
@@ -92,6 +95,17 @@ Route::group(['prefix' => 'app'], function () {
     Route::get('ecommerce/shop', [ProductController::class, 'index'])->name('app-ecommerce-shop');
     Route::get('ecommerce/details/{productId}', [ProductController::class, 'ecommerce_details'])->name('app-ecommerce-details');
     Route::get('ecommerce/wishlist', [AppsController::class, 'ecommerce_wishlist'])->name('app-ecommerce-wishlist');
+
+    Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.details');
+    Route::middleware(['auth'])->group(function () {
+        Route::post('/wishlist/add/{product}', [WishlistController::class, 'add'])->name('wishlist.add');
+        Route::post('/wishlist/remove/{product}', [WishlistController::class, 'remove'])->name('wishlist.remove');
+        Route::get('ecommerce/wishlist', [WishlistController::class, 'show'])->name('wishlist.show');
+
+    });
+
+
+
     Route::get('ecommerce/checkout', [AppsController::class, 'ecommerce_checkout'])->name('app-ecommerce-checkout');
     Route::get('file-manager', [AppsController::class, 'file_manager'])->name('app-file-manager');
     Route::get('access-roles', [AppsController::class, 'access_roles'])->name('app-access-roles');

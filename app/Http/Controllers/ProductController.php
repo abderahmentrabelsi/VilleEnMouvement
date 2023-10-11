@@ -50,10 +50,16 @@ class ProductController extends Controller
         return response()->json(['message' => 'Product created successfully', 'data' => $request], 201);
     }
 
-    public function show(Product $product)
+    public function show($id)
     {
-        return view('products.show', compact('product'));
+        // Fetch the product details by the $id parameter
+        $product = Product::find($id);
+
+        // Display the product details in the view
+//display the object when you find it
+        return response()->json(['message' => 'Product retrieved successfully', 'data' => $product], 200);
     }
+
 
     public function edit(Product $product)
     {

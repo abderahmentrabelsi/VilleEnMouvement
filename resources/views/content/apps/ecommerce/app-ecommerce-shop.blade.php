@@ -134,10 +134,14 @@
                         <h4 class="item-price">${{ $product->price }}</h4>
                     </div>
                 </div>
-                <a href="#" class="btn btn-light btn-wishlist">
-                    <i data-feather="heart"></i>
-                    <span>Wishlist</span>
-                </a>
+                <form method="POST" action="{{ route('wishlist.add', $product) }}">
+                    @csrf
+                    <button type="submit" class="btn btn-light btn-wishlist">
+                        <i data-feather="heart"></i>
+                        <span>Wishlist</span>
+                    </button>
+                </form>
+
                 <a href="#" class="btn btn-primary btn-cart">
                     <i data-feather="shopping-cart"></i>
                     <span class="add-to-cart">Add to cart</span>
