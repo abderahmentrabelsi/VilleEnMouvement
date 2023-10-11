@@ -16,6 +16,8 @@ use App\Http\Controllers\MiscellaneousController;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\DatabaseTestController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,39 @@ use App\Http\Controllers\DatabaseTestController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/get-csrf-token', function () {
+    return response()->json(['csrf_token' => csrf_token()]);
+});
+
+// Create a new product (GET request to show the create form)
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+
+// Store a new product (POST request to save the data)
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+
+// List all products (GET request to list all products)
+//Route::get('/app/ecommerce/shop', [ProductController::class, 'index'])->name('app.ecommerce.shop');
+
+// Show a specific product (GET request to show a single product)
+Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show');
+
+// Edit a specific product (GET request to show the edit form)
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+
+// Update a specific product (PUT/PATCH request to update the data)
+Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+
+// Delete a specific product (DELETE request to delete a product)
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+
+
+
+
+
+
+
 
 // Main Page Route
 Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
@@ -54,8 +89,8 @@ Route::group(['prefix' => 'app'], function () {
     Route::get('invoice/edit', [AppsController::class, 'invoice_edit'])->name('app-invoice-edit');
     Route::get('invoice/add', [AppsController::class, 'invoice_add'])->name('app-invoice-add');
     Route::get('invoice/print', [AppsController::class, 'invoice_print'])->name('app-invoice-print');
-    Route::get('ecommerce/shop', [AppsController::class, 'ecommerce_shop'])->name('app-ecommerce-shop');
-    Route::get('ecommerce/details', [AppsController::class, 'ecommerce_details'])->name('app-ecommerce-details');
+    Route::get('ecommerce/shop', [ProductController::class, 'index'])->name('app-ecommerce-shop');
+    Route::get('ecommerce/details/{productId}', [ProductController::class, 'ecommerce_details'])->name('app-ecommerce-details');
     Route::get('ecommerce/wishlist', [AppsController::class, 'ecommerce_wishlist'])->name('app-ecommerce-wishlist');
     Route::get('ecommerce/checkout', [AppsController::class, 'ecommerce_checkout'])->name('app-ecommerce-checkout');
     Route::get('file-manager', [AppsController::class, 'file_manager'])->name('app-file-manager');

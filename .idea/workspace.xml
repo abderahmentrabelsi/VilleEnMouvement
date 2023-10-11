@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="✨ [User Authentication and Management Implementation]&#10;&#10;🔐 Implemented user authentication and management features.&#10;   - 🗃️ Created the 'users' table in the database to store user information.&#10;   - 🌐 Implemented user registration, login, and password reset functionality.&#10;   - 📝 Added user profile management features, allowing users to update their information.&#10;   - 🔒 Set up user role management for admin and regular users.&#10;   &#10;👥 Enabled Team management (optional) and configured related database tables.&#10;   - 🏢 Created 'teams' and 'team_user' tables for team management.&#10;   - 🚀 Implemented team creation, membership, and invitation features.&#10;   &#10;📧 Integrated email notifications for registration and password reset processes.&#10;🛡️ Enhanced security measures, including password hashing and CSRF protection.&#10;🚦 Implemented user-friendly error handling and validation messages.">
+    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment=" [Avatar/Upload Image Feature Added]&#10;&#10; Implemented the ability for users to upload avatars or profile images.&#10;   - Users can now upload and set profile pictures.&#10;   - Added image upload functionality to user profiles.&#10;   - Supported image formats include JPG, PNG, and GIF.&#10;   &#10; Images are securely stored in the server's storage directory.&#10;&#10; DONE&#10;&#10; Reminder: Don't forget to git pull every day when you open the project.">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_10_110517_create_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/jetstream.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jetstream.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-details.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-details.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +47,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php\php.exe">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
@@ -181,22 +187,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -214,7 +220,14 @@
       <workItem from="1696008425242" duration="203000" />
       <workItem from="1696067203272" duration="65000" />
       <workItem from="1696067355496" duration="5639000" />
-      <workItem from="1696168961543" duration="2769000" />
+      <workItem from="1696168961543" duration="3927000" />
+      <workItem from="1696195315938" duration="3852000" />
+      <workItem from="1696199708403" duration="28000" />
+      <workItem from="1696200414636" duration="406000" />
+      <workItem from="1696235211026" duration="1591000" />
+      <workItem from="1696682442650" duration="899000" />
+      <workItem from="1696840444480" duration="980000" />
+      <workItem from="1696932485815" duration="12475000" />
     </task>
     <task id="LOCAL-00001" summary="🔗 Added PostgreSQL Database Connection Configuration&#10;&#10;In this commit, we configured the database connection settings for PostgreSQL in our Laravel project. The following changes were made:&#10;&#10;✅ Updated the .env file to include PostgreSQL as the database connection driver.&#10;⚙️ Set the host, port, database name, username, and password to connect to the PostgreSQL database.&#10;🔌 Enabled the PDO PostgreSQL extension in the PHP configuration (php.ini) on Windows.&#10;🛠️ Created a database connection test route and controller to ensure the connection is successful.&#10;👁️‍🗨️ Verified that the PostgreSQL extension is enabled by checking the PHP Info page.&#10;&#10;This configuration allows our Laravel application to connect to the PostgreSQL database, ensuring proper database functionality.&#10;&#10;#postgresql #laravel #database-connection">
       <option name="closed" value="true" />
@@ -232,7 +245,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696171080339</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="🌟 [Avatar/Upload Image Feature Added]&#10;&#10;📷 Implemented the ability for users to upload avatars or profile images.&#10;   - Users can now upload and set profile pictures.&#10;   - Added image upload functionality to user profiles.&#10;   - Supported image formats include JPG, PNG, and GIF.&#10;   &#10;💾 Images are securely stored in the server's storage directory.&#10;&#10;🎉 DONE&#10;&#10;📌 Reminder: Don't forget to git pull every day when you open the project.">
+      <option name="closed" value="true" />
+      <created>1696171875649</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696171875649</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -242,6 +263,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value=" Added PostgreSQL Database Connection Configuration&#10;&#10;In this commit, we configured the database connection settings for PostgreSQL in our Laravel project. The following changes were made:&#10;&#10;✅ Updated the .env file to include PostgreSQL as the database connection driver.&#10;⚙️ Set the host, port, database name, username, and password to connect to the PostgreSQL database.&#10; Enabled the PDO PostgreSQL extension in the PHP configuration (php.ini) on Windows.&#10;️ Created a database connection test route and controller to ensure the connection is successful.&#10;️‍️ Verified that the PostgreSQL extension is enabled by checking the PHP Info page.&#10;&#10;This configuration allows our Laravel application to connect to the PostgreSQL database, ensuring proper database functionality.&#10;&#10;#postgresql #laravel #database-connection" />
     <MESSAGE value="✨ [User Authentication and Management Implementation]&#10;&#10; Implemented user authentication and management features.&#10;   - ️ Created the 'users' table in the database to store user information.&#10;   -  Implemented user registration, login, and password reset functionality.&#10;   -  Added user profile management features, allowing users to update their information.&#10;   -  Set up user role management for admin and regular users.&#10;   &#10; Enabled Team management (optional) and configured related database tables.&#10;   -  Created 'teams' and 'team_user' tables for team management.&#10;   -  Implemented team creation, membership, and invitation features.&#10;   &#10; Integrated email notifications for registration and password reset processes.&#10;️ Enhanced security measures, including password hashing and CSRF protection.&#10; Implemented user-friendly error handling and validation messages." />
-    <option name="LAST_COMMIT_MESSAGE" value="✨ [User Authentication and Management Implementation]&#10;&#10; Implemented user authentication and management features.&#10;   - ️ Created the 'users' table in the database to store user information.&#10;   -  Implemented user registration, login, and password reset functionality.&#10;   -  Added user profile management features, allowing users to update their information.&#10;   -  Set up user role management for admin and regular users.&#10;   &#10; Enabled Team management (optional) and configured related database tables.&#10;   -  Created 'teams' and 'team_user' tables for team management.&#10;   -  Implemented team creation, membership, and invitation features.&#10;   &#10; Integrated email notifications for registration and password reset processes.&#10;️ Enhanced security measures, including password hashing and CSRF protection.&#10; Implemented user-friendly error handling and validation messages." />
+    <MESSAGE value=" [Avatar/Upload Image Feature Added]&#10;&#10; Implemented the ability for users to upload avatars or profile images.&#10;   - Users can now upload and set profile pictures.&#10;   - Added image upload functionality to user profiles.&#10;   - Supported image formats include JPG, PNG, and GIF.&#10;   &#10; Images are securely stored in the server's storage directory.&#10;&#10; DONE&#10;&#10; Reminder: Don't forget to git pull every day when you open the project." />
+    <option name="LAST_COMMIT_MESSAGE" value=" [Avatar/Upload Image Feature Added]&#10;&#10; Implemented the ability for users to upload avatars or profile images.&#10;   - Users can now upload and set profile pictures.&#10;   - Added image upload functionality to user profiles.&#10;   - Supported image formats include JPG, PNG, and GIF.&#10;   &#10; Images are securely stored in the server's storage directory.&#10;&#10; DONE&#10;&#10; Reminder: Don't forget to git pull every day when you open the project." />
   </component>
 </project>
