@@ -9,10 +9,17 @@ class WishlistController extends Controller
 {
     public function add(Product $product)
     {
-        auth()->user()->wishlist()->attach($product->id);
+        $user = auth()->user();
+        $wishlist = $user->wishlist();
 
-        return back()->with('success', 'Product added to wishlist.');
+        if (!$wishlist->where('wishlist.product_id', $product->id)->exists()) {
+            $wishlist->attach($product->id);
+            return back()->with('success', 'Product added to wishlist.');
+        }
+
+        return back()->with('error', 'Product is already in the wishlist.');
     }
+
 
     public function remove(Product $product)
     {
