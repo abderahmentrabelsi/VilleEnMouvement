@@ -47,6 +47,7 @@
                 <p class="card-text item-description">
                     {{ $item->description }}
                 </p>
+
             </div>
             <div class="item-options text-center">
                 <button
