@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product; // Import the Product model
+use App\Models\Product;
+use Illuminate\Support\Facades\Auth;
+
+// Import the Product model
 //import this view app-ecommerce-shop
 
 
@@ -22,7 +25,10 @@ class ProductController extends Controller
 
         $products = Product::all();
 
-        return view('content.apps.ecommerce.app-ecommerce-shop', compact('pageConfigs', 'breadcrumbs', 'products'));
+        // Get the user's wishlist items
+        $wishlistItems = auth()->user()->wishlist;
+
+        return view('content.apps.ecommerce.app-ecommerce-shop', compact('pageConfigs', 'breadcrumbs', 'products', 'wishlistItems'));
     }
 
 
@@ -55,9 +61,17 @@ class ProductController extends Controller
         // Fetch the product details by the $id parameter
         $product = Product::find($id);
 
-        // Display the product details in the view
-//display the object when you find it
-        return response()->json(['message' => 'Product retrieved successfully', 'data' => $product], 200);
+        if (!$product) {
+            return response()->json(['message' => 'Product not found', 'data' => null], 404);
+        }
+
+        // Get the user's wishlist items
+        $wishlistItems = Auth::user()->wishlist;
+
+        // Check if the product is in the user's wishlist
+        $isInWishlist = $wishlistItems->contains('id', $product->id);
+
+        return view('content.apps.ecommerce.app-ecommerce-shop', compact('product', 'wishlistItems', 'isInWishlist'));
     }
 
 

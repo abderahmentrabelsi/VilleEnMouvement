@@ -24,9 +24,20 @@ class WishlistController extends Controller
     public function show()
     {
         $wishlistItems = auth()->user()->wishlist;
-        //dd($wishlistItems);
-        return view('content.apps.ecommerce.app-ecommerce-wishlist', compact('wishlistItems'));
+
+        $pageConfigs = [
+            'pageClass' => 'ecommerce-application',
+        ];
+
+        $breadcrumbs = [
+            ['link' => "/", 'name' => "Home"],
+            ['link' => "javascript:void(0)", 'name' => "eCommerce"],
+            ['name' => "Wish List"]
+        ];
+
+        return view('content.apps.ecommerce.app-ecommerce-wishlist', compact('wishlistItems', 'pageConfigs', 'breadcrumbs'));
     }
+
 
 
 

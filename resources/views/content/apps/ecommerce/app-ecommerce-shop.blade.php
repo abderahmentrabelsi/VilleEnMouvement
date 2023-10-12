@@ -134,13 +134,20 @@
                         <h4 class="item-price">${{ $product->price }}</h4>
                     </div>
                 </div>
-                <form method="POST" action="{{ route('wishlist.add', $product) }}">
+                <form method="POST" action="{{ in_array($product->id, $wishlistItems->pluck('id')->toArray()) ? route('wishlist.remove', $product) : route('wishlist.add', $product) }}">
                     @csrf
-                    <button type="submit" class="btn btn-light btn-wishlist">
-                        <i data-feather="heart"></i>
-                        <span>Wishlist</span>
-                    </button>
+                    @if (in_array($product->id, $wishlistItems->pluck('id')->toArray()))
+                        <button type="submit" class="btn btn-danger btn-wishlist">
+                            <i data-feather="heart"></i>
+                        </button>
+                    @else
+                        <button type="submit" class="btn btn-light btn-wishlist">
+                            <i data-feather="heart"></i>
+                            <span>Add to Wishlist</span>
+                        </button>
+                    @endif
                 </form>
+
 
                 <a href="#" class="btn btn-primary btn-cart">
                     <i data-feather="shopping-cart"></i>

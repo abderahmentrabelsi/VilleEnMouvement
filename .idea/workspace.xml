@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="✨ Implemented e-commerce shop page and backend functionality&#10;&#10;🛒 Developed the shop page to display products.&#10;📦 Implemented backend methods for shop management.&#10;💼 Integrated product retrieval and display from the database.&#10;🔗 Created routes and links for seamless navigation.&#10;🧪 Tested the e-commerce shop functionality for accuracy.&#10;&#10;🚀 Implemented dynamic product details display using database data&#10;&#10;📊 Created a 'show' method in ProductController to fetch product details from the database.&#10;🛠 Updated product details view to use real product data, including image URLs.&#10;🔗 Modified links in the shop view to redirect to product details pages with the correct routes.&#10;🧪 Tested the 'ecommerce_details' method using Postman.&#10;🖼️ Updated image sources to use 'image_url' for product display.">
+    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="🔧 Correct dynamic wishlist item display&#10;&#10;Fixed an issue with the dynamic display of wishlist items to ensure proper rendering. The previous implementation had a bug, and this commit corrects it by addressing the issue and ensuring that wishlist items are displayed correctly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WishlistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WishlistController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-wishlist.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697046471890</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="🔧 Correct dynamic wishlist item display&#10;&#10;Fixed an issue with the dynamic display of wishlist items to ensure proper rendering. The previous implementation had a bug, and this commit corrects it by addressing the issue and ensuring that wishlist items are displayed correctly.">
+      <option name="closed" value="true" />
+      <created>1697109855639</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1697109855639</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +278,7 @@
     <MESSAGE value="✨ [User Authentication and Management Implementation]&#10;&#10; Implemented user authentication and management features.&#10;   - ️ Created the 'users' table in the database to store user information.&#10;   -  Implemented user registration, login, and password reset functionality.&#10;   -  Added user profile management features, allowing users to update their information.&#10;   -  Set up user role management for admin and regular users.&#10;   &#10; Enabled Team management (optional) and configured related database tables.&#10;   -  Created 'teams' and 'team_user' tables for team management.&#10;   -  Implemented team creation, membership, and invitation features.&#10;   &#10; Integrated email notifications for registration and password reset processes.&#10;️ Enhanced security measures, including password hashing and CSRF protection.&#10; Implemented user-friendly error handling and validation messages." />
     <MESSAGE value=" [Avatar/Upload Image Feature Added]&#10;&#10; Implemented the ability for users to upload avatars or profile images.&#10;   - Users can now upload and set profile pictures.&#10;   - Added image upload functionality to user profiles.&#10;   - Supported image formats include JPG, PNG, and GIF.&#10;   &#10; Images are securely stored in the server's storage directory.&#10;&#10; DONE&#10;&#10; Reminder: Don't forget to git pull every day when you open the project." />
     <MESSAGE value="✨ Implemented e-commerce shop page and backend functionality&#10;&#10; Developed the shop page to display products.&#10; Implemented backend methods for shop management.&#10; Integrated product retrieval and display from the database.&#10; Created routes and links for seamless navigation.&#10; Tested the e-commerce shop functionality for accuracy.&#10;&#10; Implemented dynamic product details display using database data&#10;&#10; Created a 'show' method in ProductController to fetch product details from the database.&#10; Updated product details view to use real product data, including image URLs.&#10; Modified links in the shop view to redirect to product details pages with the correct routes.&#10; Tested the 'ecommerce_details' method using Postman.&#10;️ Updated image sources to use 'image_url' for product display." />
-    <option name="LAST_COMMIT_MESSAGE" value="✨ Implemented e-commerce shop page and backend functionality&#10;&#10; Developed the shop page to display products.&#10; Implemented backend methods for shop management.&#10; Integrated product retrieval and display from the database.&#10; Created routes and links for seamless navigation.&#10; Tested the e-commerce shop functionality for accuracy.&#10;&#10; Implemented dynamic product details display using database data&#10;&#10; Created a 'show' method in ProductController to fetch product details from the database.&#10; Updated product details view to use real product data, including image URLs.&#10; Modified links in the shop view to redirect to product details pages with the correct routes.&#10; Tested the 'ecommerce_details' method using Postman.&#10;️ Updated image sources to use 'image_url' for product display." />
+    <MESSAGE value=" Correct dynamic wishlist item display&#10;&#10;Fixed an issue with the dynamic display of wishlist items to ensure proper rendering. The previous implementation had a bug, and this commit corrects it by addressing the issue and ensuring that wishlist items are displayed correctly." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Correct dynamic wishlist item display&#10;&#10;Fixed an issue with the dynamic display of wishlist items to ensure proper rendering. The previous implementation had a bug, and this commit corrects it by addressing the issue and ensuring that wishlist items are displayed correctly." />
   </component>
 </project>
