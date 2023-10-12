@@ -28,6 +28,7 @@ class WishlistController extends Controller
         return back()->with('success', 'Product removed from wishlist.');
     }
 
+
     public function show()
     {
         $wishlistItems = auth()->user()->wishlist;

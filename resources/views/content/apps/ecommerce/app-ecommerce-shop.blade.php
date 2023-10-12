@@ -128,6 +128,7 @@
                     {{ $product->description }}
                 </p>
             </div>
+
             <div class="item-options text-center">
                 <div class="item-wrapper">
                     <div class="item-cost">

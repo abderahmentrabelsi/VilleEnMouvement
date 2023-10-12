@@ -48,6 +48,7 @@
                     {{ $item->description }}
                 </p>
 
+
             </div>
             <div class="item-options text-center">
                 <button
