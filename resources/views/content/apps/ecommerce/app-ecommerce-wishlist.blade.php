@@ -18,8 +18,12 @@
     @foreach($wishlistItems as $item)
         <div class="card ecommerce-card">
             <div class="item-img text-center">
-                <a href="{{url('app/ecommerce/details')}}">
-                    <img src="{{asset('images/pages/eCommerce/1.png')}}" class="img-fluid" alt="img-placeholder" />
+                <a href="{{ url('app/ecommerce/details/' . $item->id) }}">
+                    <img
+                        class="img-fluid card-img-top"
+                        src="{{ $item->image_url }}"
+                        alt="img-placeholder"
+                    />
                 </a>
             </div>
             <div class="card-body">
