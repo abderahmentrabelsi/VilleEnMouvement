@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="✨ Implemented e-commerce shop page and backend functionality&#10;&#10;🛒 Developed the shop page to display products.&#10;📦 Implemented backend methods for shop management.&#10;💼 Integrated product retrieval and display from the database.&#10;🔗 Created routes and links for seamless navigation.&#10;🧪 Tested the e-commerce shop functionality for accuracy.&#10;&#10;🚀 Implemented dynamic product details display using database data&#10;&#10;📊 Created a 'show' method in ProductController to fetch product details from the database.&#10;🛠 Updated product details view to use real product data, including image URLs.&#10;🔗 Modified links in the shop view to redirect to product details pages with the correct routes.&#10;🧪 Tested the 'ecommerce_details' method using Postman.&#10;🖼️ Updated image sources to use 'image_url' for product display.">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/WishlistController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Wishlist.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_11_175540_create_wishlists_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_11_185515_update_database_schema.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WishlistController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/WishlistController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-wishlist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-wishlist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

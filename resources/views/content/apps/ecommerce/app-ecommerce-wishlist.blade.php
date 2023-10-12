@@ -15,59 +15,47 @@
 @section('content')
 <!-- Wishlist Starts -->
 <section id="wishlist" class="grid-view wishlist-items">
-    @foreach ($wishlistItems as $item)
+    @foreach($wishlistItems as $item)
         <div class="card ecommerce-card">
             <div class="item-img text-center">
-                <a href="{{ $item->product ? route('product.details', ['product' => $item->product->id]) : '#' }}">
-                    <img src="{{ $item->product ? asset('images/pages/eCommerce/' . $item->product->image) : '#' }}" class="img-fluid" alt="img-placeholder" />
+                <a href="{{url('app/ecommerce/details')}}">
+                    <img src="{{asset('images/pages/eCommerce/1.png')}}" class="img-fluid" alt="img-placeholder" />
                 </a>
             </div>
             <div class="card-body">
                 <div class="item-wrapper">
                     <div class="item-rating">
-                        @if ($item->product)
-                            @for ($i = 1; $i <= $item->product->rating; $i++)
-                                <i data-feather="star" class="filled-star"></i>
-                            @endfor
-                            @for ($i = 1; $i <= 5 - $item->product->rating; $i++)
-                                <i data-feather="star" class="unfilled-star"></i>
-                            @endfor
-                        @endif
+                        <ul class="unstyled-list list-inline">
+                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                            <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
+                            <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
+                        </ul>
                     </div>
                     <div class="item-cost">
-                        <h6 class="item-price">${{ $item->product ? $item->product->price : 'N/A' }}</h6>
+                        <h6 class="item-price">${{ $item->price }}</h6>
                     </div>
                 </div>
                 <div class="item-name">
-                    <a href="{{ $item->product ? route('product.details', ['product' => $item->product->id]) : '#' }}">
-                        {{ $item->product ? $item->product->name : 'Product Not Found' }}
-                    </a>
+                    <a href="{{url('app/ecommerce/details')}}">{{ $item->name }}</a>
                 </div>
                 <p class="card-text item-description">
-                    {{ $item->product ? $item->product->description : 'Product Not Found' }}
+                    {{ $item->description }}
                 </p>
             </div>
             <div class="item-options text-center">
-                @if ($item->product)
-                    <form method="POST" action="{{ route('wishlist.remove', $item->product) }}">
-                        @csrf
-                        <button type="submit" class="btn btn-light btn-wishlist remove-wishlist">
-                            <i data-feather="x"></i>
-                            <span>Remove</span>
-                        </button>
-                    </form>
-                    <form method="POST" action="{{ route('cart.add', $item->product) }}">
-                        @csrf
-                        <button type="submit" class="btn btn-primary btn-cart move-cart">
-                            <i data-feather="shopping-cart"></i>
-                            <span class="add-to-cart">Move to cart</span>
-                        </button>
-                    </form>
-                @endif
+                <button type="button" class="btn btn-light btn-wishlist remove-wishlist">
+                    <i data-feather="x"></i>
+                    <span>Remove</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-cart move-cart">
+                    <i data-feather="shopping-cart"></i>
+                    <span class="add-to-cart">Move to cart</span>
+                </button>
             </div>
         </div>
     @endforeach
-
 </section>
 <!-- Wishlist Ends -->
 @endsection

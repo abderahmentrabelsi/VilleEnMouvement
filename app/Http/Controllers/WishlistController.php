@@ -24,6 +24,7 @@ class WishlistController extends Controller
     public function show()
     {
         $wishlistItems = auth()->user()->wishlist;
+        //dd($wishlistItems);
         return view('content.apps.ecommerce.app-ecommerce-wishlist', compact('wishlistItems'));
     }
 
