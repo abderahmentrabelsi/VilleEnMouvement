@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $pageConfigs = [
             'contentLayout' => "content-detached-left-sidebar",
@@ -20,16 +20,28 @@ class ProductController extends Controller
         ];
 
         $breadcrumbs = [
-            ['link' => "/", 'name' => "Home"], ['link' => "javascript:void(0)", 'name' => "eCommerce"], ['name' => "Shop"]
+            ['link' => "/", 'name' => "Home"],
+            ['link' => "javascript:void(0)", 'name' => "eCommerce"],
+            ['name' => "Shop"]
         ];
 
-        $products = Product::all();
+        // Check if a search query is provided in the request
+        $searchQuery = $request->input('search');
+
+        if (!empty($searchQuery)) {
+            // Perform a case-insensitive search for products with names matching the query
+            $products = Product::where('name', 'ilike', '%' . $searchQuery . '%')->get();
+        } else {
+            // If no search query, fetch all products
+            $products = Product::all();
+        }
 
         // Get the user's wishlist items
         $wishlistItems = auth()->user()->wishlist;
 
         return view('content.apps.ecommerce.app-ecommerce-shop', compact('pageConfigs', 'breadcrumbs', 'products', 'wishlistItems'));
     }
+
 
 
     public function create()

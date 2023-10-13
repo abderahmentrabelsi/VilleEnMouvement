@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
 
 // Store a new product (POST request to save the data)
+
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
 // List all products (GET request to list all products)
@@ -95,6 +96,8 @@ Route::middleware(['auth'])->group(function () {
 
         Route::post('/wishlist/add/{product}', [WishlistController::class, 'add'])->name('wishlist.add');
         Route::post('/wishlist/remove/{product}', [WishlistController::class, 'remove'])->name('wishlist.remove');
+        Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
         Route::get('ecommerce/wishlist', [WishlistController::class, 'show'])->name('wishlist.show');
 
 

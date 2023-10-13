@@ -28,7 +28,7 @@
           <button class="navbar-toggler shop-sidebar-toggler" type="button" data-bs-toggle="collapse">
             <span class="navbar-toggler-icon d-block d-lg-none"><i data-feather="menu"></i></span>
           </button>
-          <div class="search-results">16285 results found</div>
+            <div class="search-results">{{ $products->count() }} results found</div> <!-- Display the count of search results -->
         </div>
         <div class="view-options d-flex">
           <div class="btn-group dropdown-sort">
@@ -70,22 +70,32 @@
 
 <!-- E-commerce Search Bar Starts -->
 <section id="ecommerce-searchbar" class="ecommerce-searchbar">
-  <div class="row mt-1">
-    <div class="col-sm-12">
-      <div class="input-group input-group-merge">
-        <input
-          type="text"
-          class="form-control search-product"
-          id="shop-search"
-          placeholder="Search Product"
-          aria-label="Search..."
-          aria-describedby="shop-search"
-        />
-        <span class="input-group-text"><i data-feather="search" class="text-muted"></i></span>
-      </div>
+    <div class="row mt-1">
+        <div class="col-sm-12">
+            <form action="{{ route('products.index') }}" method="GET">
+                <div class="input-group input-group-merge">
+                    <input
+                        type="text"
+                        class="form-control search-product"
+                        name="search"
+                        value="{{ request('search') }}"
+                        placeholder="Search Product"
+                        aria-label="Search..."
+                        aria-describedby="shop-search"
+                    />
+                    <span class="input-group-text"><i data-feather="search" class="text-muted"></i></span>
+                </div>
+            </form>
+        </div>
     </div>
-  </div>
 </section>
+
+<!-- Display the products below -->
+<div class="row">
+    @foreach ($products as $product)
+        <!-- Display each product -->
+    @endforeach
+</div>
 <!-- E-commerce Search Bar Ends -->
 
 <!-- E-commerce Products Starts -->
