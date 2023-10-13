@@ -50,17 +50,18 @@
 
 
             </div>
-            <div class="item-options text-center">
-                <button
-                    type="button"
-                    class="btn btn-light btn-wishlist remove-wishlist"
-                    data-product-id="{{ $item->id }}"
-                >
+            <form method="POST" action="{{ route('wishlist.remove', $item) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-light btn-wishlist remove-wishlist">
                     <i data-feather="x"></i>
                     <span>Remove</span>
                 </button>
+            </form>
 
-                <button type="button" class="btn btn-primary btn-cart move-cart">
+
+
+            <button type="button" class="btn btn-primary btn-cart move-cart">
                     <i data-feather="shopping-cart"></i>
                     <span class="add-to-cart">Move to cart</span>
                 </button>
@@ -69,34 +70,6 @@
     @endforeach
 </section>
 <!-- Wishlist Ends -->
-<script>
-    $(document).ready(function() {
-        // Attach a click event to the "Remove" button
-        $('.remove-wishlist').on('click', function() {
-            // Get the product ID from the data-product-id attribute
-            var productId = $(this).data('product-id');
-
-            // Send an AJAX request to remove the product from the wishlist
-            $.ajax({
-                type: 'POST',
-                url: '/wishlist/remove/' + productId,
-                data: {
-                    _token: '{{ csrf_token() }}'
-                },
-                success: function(response) {
-                    if (response.success) {
-                        // Product was successfully removed
-                        // You can add a success message or refresh the page
-                        location.reload();
-                    } else {
-                        // Handle any error
-                        console.log(response.message);
-                    }
-                }
-            });
-        });
-    });
-</script>
 
 @endsection
 

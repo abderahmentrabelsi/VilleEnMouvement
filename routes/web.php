@@ -36,6 +36,7 @@ use App\Http\Controllers\WishlistController;
 Route::get('/get-csrf-token', function () {
     return response()->json(['csrf_token' => csrf_token()]);
 });
+Route::middleware(['auth'])->group(function () {
 
 // Create a new product (GET request to show the create form)
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
@@ -94,15 +95,14 @@ Route::group(['prefix' => 'app'], function () {
     Route::get('invoice/print', [AppsController::class, 'invoice_print'])->name('app-invoice-print');
     Route::get('ecommerce/shop', [ProductController::class, 'index'])->name('app-ecommerce-shop');
     Route::get('ecommerce/details/{productId}', [ProductController::class, 'ecommerce_details'])->name('app-ecommerce-details');
-    Route::get('ecommerce/wishlist', [AppsController::class, 'ecommerce_wishlist'])->name('app-ecommerce-wishlist');
+    //Route::get('ecommerce/wishlist', [AppsController::class, 'ecommerce_wishlist'])->name('app-ecommerce-wishlist');
 
     Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.details');
-    Route::middleware(['auth'])->group(function () {
+
         Route::post('/wishlist/add/{product}', [WishlistController::class, 'add'])->name('wishlist.add');
         Route::post('/wishlist/remove/{product}', [WishlistController::class, 'remove'])->name('wishlist.remove');
         Route::get('ecommerce/wishlist', [WishlistController::class, 'show'])->name('wishlist.show');
 
-    });
 
 
 
@@ -292,6 +292,7 @@ Route::get('/maps/leaflet', [ChartsController::class, 'maps_leaflet'])->name('ma
 // locale Route
 Route::get('lang/{locale}', [LanguageController::class, 'swap']);
 
+});
 
 Route::middleware([
     'auth:sanctum',
