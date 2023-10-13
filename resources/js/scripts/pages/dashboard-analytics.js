@@ -37,7 +37,7 @@ $(window).on('load', function () {
   // On load Toast
   setTimeout(function () {
     toastr['success'](
-      'You have successfully logged in to Vuexy. Now you can start to explore!',
+      'You have successfully logged in to VilleEnMouvement. Now you can start to explore!',
       '👋 Welcome John Doe!',
       {
         closeButton: true,

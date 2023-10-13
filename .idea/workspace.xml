@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="bug fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/apps/ecommerce/app-ecommerce-shop.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-analytics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-ecommerce.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-ecommerce.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-analytics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-analytics.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-ecommerce.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-ecommerce.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
