@@ -50,15 +50,14 @@
 
 
             </div>
-            <form method="POST" action="{{ route('wishlist.remove', $item) }}">
+            <form method="POST" action="{{ route('wishlist.removeWish', $item->id) }}">
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-light btn-wishlist remove-wishlist">
+                <input type="hidden" name="_method" value="POST">
+                <button type="submit" class="btn btn-light btn-wishlist remove-wishlists">
                     <i data-feather="x"></i>
                     <span>Remove</span>
                 </button>
             </form>
-
 
 
             <button type="button" class="btn btn-primary btn-cart move-cart">
