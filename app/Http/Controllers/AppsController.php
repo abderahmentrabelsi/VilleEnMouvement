@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Voyage;
 use Illuminate\Http\Request;
 
 class AppsController extends Controller
@@ -245,5 +246,69 @@ class AppsController extends Controller
             'pageConfigs' => $pageConfigs,
             'breadcrumbs' => $breadcrumbs
         ]);
+    }
+    public function index()
+    {
+        $voyages = Voyage::all();
+        return view('voyages.index', compact('voyages'));
+
+    }
+
+    public function create()
+    {
+        return view('voyages.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'date_voyage' => 'required',
+            'heure' => 'required',
+            'nbr_places' => 'required|integer',
+            'lieu_depart' => 'required',
+            'lieu_arrive' => 'required',
+        ]);
+
+        //debug
+
+
+
+
+        //return redirect()->route('voyages.index')->with('success', 'Voyage created successfully.');
+    }
+
+
+
+
+
+
+
+
+    public function edit($id)
+    {
+        $voyage = Voyage::find($id);
+        return view('voyages.edit', compact('voyage'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'date_voyage' => 'required',
+            'heure' => 'required',
+            'nbr_places' => 'required|integer',
+            'lieu_depart' => 'required',
+            'lieu_arrive' => 'required',
+        ]);
+
+        $voyage = Voyage::find($id);
+        $voyage->update($request->all());
+
+        return redirect()->route('voyages.index')->with('success', 'Voyage updated successfully.');
+    }
+
+    public function destroy($id)
+    {
+        Voyage::find($id)->delete();
+        return redirect()->route('voyages.index')->with('success', 'Voyage deleted successfully.');
     }
 }
