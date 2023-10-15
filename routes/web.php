@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
@@ -20,6 +21,20 @@ use App\Http\Controllers\ProductController;
 
 //IMPORT WISHLIST CONTROLLER
 use App\Http\Controllers\WishlistController;
+
+/* khalil Routes */
+
+Route::get('/voyages', [VoyageController::class, 'index'])->name('voyages.index');
+Route::get('/voyagesJson', [VoyageController::class, 'index2'])->name('voyages.index2');
+
+Route::get('/voyages/create', [VoyageController::class, 'create'])->name('/voyages.create');
+Route::post('/voyages/store', [VoyageController::class, 'store'])->name('voyages.store');
+
+Route::get('/voyages/edit/{id}', [VoyageController::class, 'edit'])->name('voyages.edit');
+Route::put('/voyages/update/{id}', [VoyageController::class, 'update'])->name('voyages.update');
+
+Route::delete('/voyages/delete/{id}', [VoyageController::class, 'destroy'])->name('voyages.destroy');
+Route::get('/voyages/show/{id}', [VoyageController::class, 'show'])->name('voyages.show');
 
 
 /*

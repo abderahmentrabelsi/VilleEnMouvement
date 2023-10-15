@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="bug fix">
+    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="merge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-analytics.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-analytics.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-ecommerce.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts/pages/dashboard-ecommerce.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-analytics.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-analytics.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-ecommerce.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/content/dashboard/dashboard-ecommerce.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/data/menu-data/verticalMenu.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/data/menu-data/verticalMenu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +200,10 @@
   }
 }</component>
   <component name="RunManager">
+    <configuration default="true" type="ComposerRunConfigurationType" factoryName="Composer Script">
+      <option name="pathToComposerJson" value="$PROJECT_DIR$/composer.json" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
@@ -346,6 +348,7 @@
     <MESSAGE value=" Correct dynamic wishlist item display&#10;&#10;Fixed an issue with the dynamic display of wishlist items to ensure proper rendering. The previous implementation had a bug, and this commit corrects it by addressing the issue and ensuring that wishlist items are displayed correctly." />
     <MESSAGE value=" Added wishlist functionality to ProductController's show method&#10; Modified the show method to pass wishlist items and configurations&#10; Styled the heart icon in wishlist based on user's preferences" />
     <MESSAGE value="bug fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug fix" />
+    <MESSAGE value="merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
   </component>
 </project>
