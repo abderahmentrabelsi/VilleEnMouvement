@@ -58,19 +58,23 @@ $(window).on('load', function () {
   var isRtl = $('html').attr('data-textdirection') === 'rtl';
 
   // On load Toast
-  setTimeout(function () {
-    toastr['success'](
-      'You have successfully logged in to Vuexy. Now you can start to explore!',
-      '👋 Welcome John Doe!',
-      {
-        closeButton: true,
-        tapToDismiss: false,
-        rtl: isRtl
-      }
-    );
-  }, 2000);
+    setTimeout(function () {
+        const notificationElement = document.getElementById('welcome-notification');
+        const userName = notificationElement.getAttribute('data-username');
 
-  //------------ Statistics Bar Chart ------------
+        toastr['success'](
+            'You have successfully logged in to VilleEnMouvement. Now you can start to explore!',
+            `👋 Welcome ${userName}!`,
+            {
+                closeButton: true,
+                tapToDismiss: false,
+                rtl: isRtl
+            }
+        );
+    }, 2000);
+
+
+    //------------ Statistics Bar Chart ------------
   //----------------------------------------------
   statisticsOrderChartOptions = {
     chart: {
