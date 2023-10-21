@@ -34,6 +34,11 @@ class Product extends Model
         }
 
         return $starRatingHTML;
+    } // <- ya kolleb mayjiwch hna rendering html
+
+    public function orders()
+    {
+        return $this->morphToMany(Order::class, 'orderable')->withPivot('quantity');
     }
 
 }

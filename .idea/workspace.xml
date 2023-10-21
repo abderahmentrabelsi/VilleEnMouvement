@@ -4,33 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="🚚 bundle(public): added bundled assets to vcs; because dead inside.">
-      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/villenmouvement.hFE5yw.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea-personal.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Artisan_Serve.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Mix_Watch.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CouponController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CouponRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Coupon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Nova/Coupon.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/CouponFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_21_152153_create_coupons_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="📦 feat(Coupon): add new Coupon model, controller, request, Nova resource, factory, and migration&#10;🔧 chore(gitignore): ignore node_modules and .idea directories&#10;🔧 chore(php.xml): upgrade PHP language level from 8.0 to 8.1&#10;🔧 chore(workspace.xml): update task counter and last commit message&#10;🔧 chore(composer.json): upgrade PHP version requirement from 8.0.2 to 8.1&#10;&#10;The .gitignore file has been updated to ignore the node_modules and .idea directories, which are not needed in the repository. The PHP language level has been upgraded to 8.1 in th&#10;e php.xml file to take advantage of the latest features and improvements. The workspace.xml file has been updated with a new task counter and last commit message. A new Coupon mode&#10;l, controller, request, Nova resource, factory, and migration have been added to handle coupon-related operations in the application. The PHP version requirement has been upgraded to 8.1 in the composer.json file to ensure compatibility with the latest PHP version.">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/OrderRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Order.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Voyage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/OrderFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_21_155150_create_orders_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_21_155536_create_order_items_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Voyage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Voyage.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,6 +239,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Wahib\Desktop\VilleEnMouvement\public" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Wahib\Desktop\VilleEnMouvement\app\Models" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.production">
     <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -416,7 +406,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697896156351</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="📦 feat(Coupon): add new Coupon model, controller, request, Nova resource, factory, and migration&#10;🔧 chore(gitignore): ignore node_modules and .idea directories&#10;🔧 chore(php.xml): upgrade PHP language level from 8.0 to 8.1&#10;🔧 chore(workspace.xml): update task counter and last commit message&#10;🔧 chore(composer.json): upgrade PHP version requirement from 8.0.2 to 8.1&#10;&#10;The .gitignore file has been updated to ignore the node_modules and .idea directories, which are not needed in the repository. The PHP language level has been upgraded to 8.1 in th&#10;e php.xml file to take advantage of the latest features and improvements. The workspace.xml file has been updated with a new task counter and last commit message. A new Coupon mode&#10;l, controller, request, Nova resource, factory, and migration have been added to handle coupon-related operations in the application. The PHP version requirement has been upgraded to 8.1 in the composer.json file to ensure compatibility with the latest PHP version.">
+      <option name="closed" value="true" />
+      <created>1697898988653</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1697898988653</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,6 +434,7 @@
     <MESSAGE value="merge" />
     <MESSAGE value=" feat(backoffice): initial impl. for backoffice&#10; fix(assets): copied assets to public path" />
     <MESSAGE value=" bundle(public): added bundled assets to vcs; because dead inside." />
-    <option name="LAST_COMMIT_MESSAGE" value=" bundle(public): added bundled assets to vcs; because dead inside." />
+    <MESSAGE value=" feat(Coupon): add new Coupon model, controller, request, Nova resource, factory, and migration&#10; chore(gitignore): ignore node_modules and .idea directories&#10; chore(php.xml): upgrade PHP language level from 8.0 to 8.1&#10; chore(workspace.xml): update task counter and last commit message&#10; chore(composer.json): upgrade PHP version requirement from 8.0.2 to 8.1&#10;&#10;The .gitignore file has been updated to ignore the node_modules and .idea directories, which are not needed in the repository. The PHP language level has been upgraded to 8.1 in th&#10;e php.xml file to take advantage of the latest features and improvements. The workspace.xml file has been updated with a new task counter and last commit message. A new Coupon mode&#10;l, controller, request, Nova resource, factory, and migration have been added to handle coupon-related operations in the application. The PHP version requirement has been upgraded to 8.1 in the composer.json file to ensure compatibility with the latest PHP version." />
+    <option name="LAST_COMMIT_MESSAGE" value=" feat(Coupon): add new Coupon model, controller, request, Nova resource, factory, and migration&#10; chore(gitignore): ignore node_modules and .idea directories&#10; chore(php.xml): upgrade PHP language level from 8.0 to 8.1&#10; chore(workspace.xml): update task counter and last commit message&#10; chore(composer.json): upgrade PHP version requirement from 8.0.2 to 8.1&#10;&#10;The .gitignore file has been updated to ignore the node_modules and .idea directories, which are not needed in the repository. The PHP language level has been upgraded to 8.1 in th&#10;e php.xml file to take advantage of the latest features and improvements. The workspace.xml file has been updated with a new task counter and last commit message. A new Coupon mode&#10;l, controller, request, Nova resource, factory, and migration have been added to handle coupon-related operations in the application. The PHP version requirement has been upgraded to 8.1 in the composer.json file to ensure compatibility with the latest PHP version." />
   </component>
 </project>
