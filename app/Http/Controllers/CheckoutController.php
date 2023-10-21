@@ -72,11 +72,13 @@ class CheckoutController extends Controller
     $order->buyer()->associate($user);
     $order->payment_intent_id = $session->id;
     $order->status = 'pending';
+    $order->save();
 
     foreach ($user->cart as $item) {
       $order->products()->attach($item->id, ['quantity' => 1]);
     }
     $order->save();
+    $user->cart()->detach($user->cart->pluck('id'));
     return redirect($session->url, 303);
   }
 

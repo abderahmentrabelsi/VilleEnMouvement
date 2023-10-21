@@ -90,7 +90,7 @@
                   </div>
                   <form method="POST" action="{{ route('cart.remove', $cartItem->id) }}">
                     @csrf
-                    <button type="submit" class="btn btn-light mt-1 remove-cart">
+                    <button type="submit" class="btn btn-light mt-1 remove-cart ms-auto me-auto">
                       <i data-feather="x" class="align-middle me-25"></i>
                       <span>Remove</span>
                     </button>
