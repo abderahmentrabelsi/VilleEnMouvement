@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
@@ -89,7 +90,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
     });
     /* Route Dashboards */
-    Route::get('/checkout', [CheckoutController::class, 'index'])->name('app-ecommerce-checkout');
+  //Route::get('/checkout', [CheckoutController::class, 'index'])->name('app-ecommerce-checkout');
 
     /* Route Apps */
     Route::group(['prefix' => 'app'], function () {
@@ -110,10 +111,15 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.details');
 
         Route::post('wishlist/remove/{wishlistItem}', [WishlistController::class, 'removeWish'])->name('wishlist.removeWish');
-
         Route::post('/wishlist/add/{product}', [WishlistController::class, 'add'])->name('wishlist.add');
         Route::post('/wishlist/remove/{product}', [WishlistController::class, 'remove'])->name('wishlist.remove');
         Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+        Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
+        Route::post('/cart/remove/{product}', [CartController::class, 'remove'])->name('cart.remove');
+        Route::get('/checkout', [CartController::class, 'show'])->name('cart.show');
+
+
 
         Route::get('/ecommerce/wishlist', [WishlistController::class, 'show'])->name('wishlist.show');
 

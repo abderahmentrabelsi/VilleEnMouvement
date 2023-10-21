@@ -38,8 +38,10 @@ class ProductController extends Controller
 
         // Get the user's wishlist items
         $wishlistItems = auth()->user()->wishlist;
+        $cartItems = auth()->user()->cart; // Fetch cart items for the user
 
-        return view('content.apps.ecommerce.app-ecommerce-shop', compact('pageConfigs', 'breadcrumbs', 'products', 'wishlistItems'));
+
+        return view('content.apps.ecommerce.app-ecommerce-shop', compact('pageConfigs', 'breadcrumbs', 'products', 'wishlistItems', 'cartItems'));
     }
 
 
@@ -79,11 +81,12 @@ class ProductController extends Controller
 
         // Get the user's wishlist items
         $wishlistItems = Auth::user()->wishlist;
+        $cartItems = Auth::user()->cart; // Fetch cart items for the user
 
         // Check if the product is in the user's wishlist
         $isInWishlist = $wishlistItems->contains('id', $product->id);
 
-        return view('content.apps.ecommerce.app-ecommerce-shop', compact('product', 'wishlistItems', 'isInWishlist'));
+        return view('content.apps.ecommerce.app-ecommerce-shop', compact('product', 'wishlistItems', 'isInWishlist', 'cartItems'));
     }
 
 

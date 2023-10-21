@@ -56,316 +56,63 @@
       <div id="place-order" class="list-view product-checkout">
         <!-- Checkout Place Order Left starts -->
         <div class="checkout-items">
-          <div class="card ecommerce-card">
-            <div class="item-img">
-              <a href="{{url('app/ecommerce/details')}}">
-                <img src="{{asset('images/pages/eCommerce/1.png')}}" alt="img-placeholder" />
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="item-name">
-                <h6 class="mb-0"><a href="{{url('app/ecommerce/details')}}" class="text-body">Apple Watch Series 5</a></h6>
-                <span class="item-company">By <a href="#" class="company-name">Apple</a></span>
-                <div class="item-rating">
-                  <ul class="unstyled-list list-inline">
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                  </ul>
+            @foreach ($cartItems as $cartItem)
+                <div class="card ecommerce-card">
+                    <div class="item-img">
+                        <a href="{{ url('app/ecommerce/details') }}">
+                            <img src="{{ asset('images/pages/eCommerce/1.png') }}" alt="img-placeholder" />
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="item-name">
+                            <h6 class="mb-0"><a href="{{ url('app/ecommerce/details') }}" class="text-body">{{ $cartItem->product->name }}</a></h6>
+                            <span class="item-company">By <a href="#" class="company-name">{{ $cartItem->product->brand }}</a></span>
+                            <div class="item-rating">
+                                <ul class="unstyled-list list-inline">
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <li class="ratings-list-item">
+                                            <i data-feather="star" class="{{ $i <= $cartItem->product->rating ? 'filled-star' : 'unfilled-star' }}"></i>
+                                        </li>
+                                    @endfor
+                                </ul>
+                            </div>
+                        </div>
+                        <span class="text-success mb-1">In Stock</span>
+                        <div class="item-quantity">
+                            <span class="quantity-title">Qty:</span>
+                            <div class="quantity-counter-wrapper">
+                                <div class="input-group">
+                                    <input type="text" class="quantity-counter" value="{{ $cartItem->quantity }}" />
+                                </div>
+                            </div>
+                        </div>
+                        <span class="delivery-date text-muted">Delivery by, Wed Apr 25</span>
+                        <span class="text-success">17% off 4 offers Available</span>
+                    </div>
+                    <div class="item-options text-center">
+                        <div class="item-wrapper">
+                            <div class="item-cost">
+                                <h4 class="item-price">${{ number_format($cartItem->product->price, 2) }}</h4>
+                                <p class="card-text shipping">
+                                    <span class="badge rounded-pill badge-light-success">Free Shipping</span>
+                                </p>
+                            </div>
+                        </div>
+                        <form method="POST" action="{{ route('cart.remove', $cartItem->product) }}">
+                            @csrf
+                            <button type="submit" class="btn btn-light mt-1 remove-cart">
+                                <i data-feather="x" class="align-middle me-25"></i>
+                                <span>Remove</span>
+                            </button>
+                        </form>
+                        <button type="button" class="btn btn-primary btn-wishlist move-wishlist">
+                            <i data-feather="heart" class="align-middle me-25"></i>
+                            <span class="text-truncate">Add to Wishlist</span>
+                        </button>
+                    </div>
                 </div>
-              </div>
-              <span class="text-success mb-1">In Stock</span>
-              <div class="item-quantity">
-                <span class="quantity-title">Qty:</span>
-                <div class="quantity-counter-wrapper">
-                  <div class="input-group">
-                    <input type="text" class="quantity-counter" value="1" />
-                  </div>
-                </div>
-              </div>
-              <span class="delivery-date text-muted">Delivery by, Wed Apr 25</span>
-              <span class="text-success">17% off 4 offers Available</span>
-            </div>
-            <div class="item-options text-center">
-              <div class="item-wrapper">
-                <div class="item-cost">
-                  <h4 class="item-price">$19.99</h4>
-                  <p class="card-text shipping">
-                    <span class="badge rounded-pill badge-light-success">Free Shipping</span>
-                  </p>
-                </div>
-              </div>
-              <button type="button" class="btn btn-light mt-1 remove-wishlist">
-                <i data-feather="x" class="align-middle me-25"></i>
-                <span>Remove</span>
-              </button>
-              <button type="button" class="btn btn-primary btn-cart move-cart">
-                <i data-feather="heart" class="align-middle me-25"></i>
-                <span class="text-truncate">Add to Wishlist</span>
-              </button>
-            </div>
-          </div>
-          <div class="card ecommerce-card">
-            <div class="item-img">
-              <a href="{{url('app/ecommerce/details')}}">
-                <img src="{{asset('images/pages/eCommerce/2.png')}}" alt="img-placeholder" />
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="item-name">
-                <h6 class="mb-0">
-                  <a href="{{url('app/ecommerce/details')}}" class="text-body">Apple iPhone 11 (64GB, Black)</a>
-                </h6>
-                <span class="item-company">By <a href="#" class="company-name">Apple</a></span>
-                <div class="item-rating">
-                  <ul class="unstyled-list list-inline">
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                  </ul>
-                </div>
-              </div>
-              <span class="text-success mb-1">In Stock</span>
-              <div class="item-quantity">
-                <span class="quantity-title">Qty:</span>
-                <div class="quantity-counter-wrapper">
-                  <div class="input-group">
-                    <input type="text" class="quantity-counter" value="1" />
-                  </div>
-                </div>
-              </div>
-              <span class="delivery-date text-muted">Delivery by, Wed Apr 24</span>
-              <span class="text-success">7% off 1 offers Available</span>
-            </div>
-            <div class="item-options text-center">
-              <div class="item-wrapper">
-                <div class="item-cost">
-                  <h4 class="item-price">$4999.99</h4>
-                  <p class="card-text shipping">
-                    <span class="badge rounded-pill badge-light-success">Free Shipping</span>
-                  </p>
-                </div>
-              </div>
-              <button type="button" class="btn btn-light mt-1 remove-wishlist">
-                <i data-feather="x" class="align-middle me-25"></i>
-                <span>Remove</span>
-              </button>
-              <button type="button" class="btn btn-primary btn-cart move-cart">
-                <i data-feather="heart" class="align-middle me-25"></i>
-                <span class="text-truncate">Add to Wishlist</span>
-              </button>
-            </div>
-          </div>
-          <div class="card ecommerce-card">
-            <div class="item-img">
-              <a href="{{url('app/ecommerce/details')}}">
-                <img src="{{asset('images/pages/eCommerce/3.png')}}" alt="img-placeholder" />
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="item-name">
-                <h6 class="mb-0"><a href="{{url('app/ecommerce/details')}}" class="text-body">Apple iMac 27-inch</a></h6>
-                <span class="item-company">By <a href="#" class="company-name">Apple</a></span>
-                <div class="item-rating">
-                  <ul class="unstyled-list list-inline">
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                  </ul>
-                </div>
-              </div>
-              <span class="text-success mb-1">In Stock</span>
-              <div class="item-quantity">
-                <span class="quantity-title">Qty:</span>
-                <div class="quantity-counter-wrapper">
-                  <div class="input-group">
-                    <input type="text" class="quantity-counter" value="1" />
-                  </div>
-                </div>
-              </div>
-              <span class="delivery-date text-muted">Delivery by, Wed Apr 27</span>
-              <span class="text-success">3% off 1 offers Available</span>
-            </div>
-            <div class="item-options text-center">
-              <div class="item-wrapper">
-                <div class="item-cost">
-                  <h4 class="item-price">$4499.99</h4>
-                </div>
-              </div>
-              <button type="button" class="btn btn-light mt-1 remove-wishlist">
-                <i data-feather="x" class="align-middle me-25"></i>
-                <span>Remove</span>
-              </button>
-              <button type="button" class="btn btn-primary btn-cart move-cart">
-                <i data-feather="heart" class="align-middle me-25"></i>
-                <span class="text-truncate">Add to Wishlist</span>
-              </button>
-            </div>
-          </div>
-          <div class="card ecommerce-card">
-            <div class="item-img">
-              <a href="{{url('app/ecommerce/details')}}">
-                <img src="{{asset('images/pages/eCommerce/4.png')}}" alt="img-placeholder" />
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="item-name">
-                <h6 class="mb-0">
-                  <a href="{{url('app/ecommerce/details')}}" class="text-body">OneOdio A71 Wired Headphones</a>
-                </h6>
-                <span class="item-company">By <a href="#" class="company-name">OneOdio</a></span>
-                <div class="item-rating">
-                  <ul class="unstyled-list list-inline">
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                  </ul>
-                </div>
-              </div>
-              <span class="text-success mb-1">In Stock</span>
-              <div class="item-quantity">
-                <span class="quantity-title">Qty:</span>
-                <div class="quantity-counter-wrapper">
-                  <div class="input-group">
-                    <input type="text" class="quantity-counter" value="1" />
-                  </div>
-                </div>
-              </div>
-              <span class="delivery-date text-muted">Delivery by, Wed Apr 29</span>
-              <span class="text-success">5% off 2 offers Available</span>
-            </div>
-            <div class="item-options text-center">
-              <div class="item-wrapper">
-                <div class="item-cost">
-                  <h4 class="item-price">$599.99</h4>
-                  <p class="card-text shipping">
-                    <span class="badge rounded-pill badge-light-success">Free Shipping</span>
-                  </p>
-                </div>
-              </div>
-              <button type="button" class="btn btn-light mt-1 remove-wishlist">
-                <i data-feather="x" class="align-middle me-25"></i>
-                <span>Remove</span>
-              </button>
-              <button type="button" class="btn btn-primary btn-cart move-cart">
-                <i data-feather="heart" class="align-middle me-25"></i>
-                <span class="text-truncate">Add to Wishlist</span>
-              </button>
-            </div>
-          </div>
-          <div class="card ecommerce-card">
-            <div class="item-img">
-              <a href="{{url('app/ecommerce/details')}}">
-                <img src="{{asset('images/pages/eCommerce/5.png')}}" alt="img-placeholder" />
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="item-name">
-                <h6 class="mb-0">
-                  <a href="{{url('app/ecommerce/details')}}" class="text-body"
-                    >Apple - MacBook Air® (Latest Model) - 13.3" Display - Silver</a
-                  >
-                </h6>
-                <span class="item-company">By <a href="#" class="company-name">Apple</a></span>
-                <div class="item-rating">
-                  <ul class="unstyled-list list-inline">
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                  </ul>
-                </div>
-              </div>
-              <span class="text-success mb-1">In Stock</span>
-              <div class="item-quantity">
-                <span class="quantity-title">Qty:</span>
-                <div class="quantity-counter-wrapper">
-                  <div class="input-group">
-                    <input type="text" class="quantity-counter" value="1" />
-                  </div>
-                </div>
-              </div>
-              <span class="delivery-date text-muted">Delivery by, Wed Apr 30</span>
-              <span class="text-success">3% off 1 offers Available</span>
-            </div>
-            <div class="item-options text-center">
-              <div class="item-wrapper">
-                <div class="item-cost">
-                  <h4 class="item-price">$649.99</h4>
-                  <p class="card-text shipping">
-                    <span class="badge rounded-pill badge-light-success">Free Shipping</span>
-                  </p>
-                </div>
-              </div>
-              <button type="button" class="btn btn-light mt-1 remove-wishlist">
-                <i data-feather="x" class="align-middle me-25"></i>
-                <span>Remove</span>
-              </button>
-              <button type="button" class="btn btn-primary btn-cart move-cart">
-                <i data-feather="heart" class="align-middle me-25"></i>
-                <span class="text-truncate">Add to Wishlist</span>
-              </button>
-            </div>
-          </div>
-          <div class="card ecommerce-card">
-            <div class="item-img">
-              <a href="{{url('app/ecommerce/details')}}">
-                <img src="{{asset('images/pages/eCommerce/6.png')}}" alt="img-placeholder" />
-              </a>
-            </div>
-            <div class="card-body">
-              <div class="item-name">
-                <h6 class="mb-0">
-                  <a href="{{url('app/ecommerce/details')}}" class="text-body">Switch Pro Controller </a>
-                </h6>
-                <span class="item-company">By <a href="#" class="company-name">Sharp</a></span>
-                <div class="item-rating">
-                  <ul class="unstyled-list list-inline">
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="filled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                    <li class="ratings-list-item"><i data-feather="star" class="unfilled-star"></i></li>
-                  </ul>
-                </div>
-              </div>
-              <span class="text-success mb-1">In Stock</span>
-              <div class="item-quantity">
-                <span class="quantity-title">Qty:</span>
-                <div class="quantity-counter-wrapper">
-                  <div class="input-group">
-                    <input type="text" class="quantity-counter" value="1" />
-                  </div>
-                </div>
-              </div>
-              <span class="delivery-date text-muted">Delivery by, Wed Apr 30</span>
-              <span class="text-success">6% off 3 offers Available</span>
-            </div>
-            <div class="item-options text-center">
-              <div class="item-wrapper">
-                <div class="item-cost">
-                  <h4 class="item-price">$1999.99</h4>
-                </div>
-              </div>
-              <button type="button" class="btn btn-light mt-1 remove-wishlist">
-                <i data-feather="x" class="align-middle me-25"></i>
-                <span>Remove</span>
-              </button>
-              <button type="button" class="btn btn-primary btn-cart move-cart">
-                <i data-feather="heart" class="align-middle me-25"></i>
-                <span class="text-truncate">Add to Wishlist</span>
-              </button>
-            </div>
-          </div>
+            @endforeach
+
         </div>
         <!-- Checkout Place Order Left ends -->
 
