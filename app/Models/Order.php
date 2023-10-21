@@ -13,6 +13,9 @@ enum OrderStatus: string
     case CANCELLED = 'cancelled';
 }
 
+/**
+ * @mixin IdeHelperOrder
+ */
 class Order extends Model
 {
     use SoftDeletes, HasFactory;

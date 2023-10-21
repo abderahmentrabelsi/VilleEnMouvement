@@ -11,6 +11,9 @@ enum CouponType: string {
     case Fixed = "Fixed";
 }
 
+/**
+ * @mixin IdeHelperCoupon
+ */
 class Coupon extends Model
 {
     use SoftDeletes, HasFactory;

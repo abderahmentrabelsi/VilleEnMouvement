@@ -36,20 +36,6 @@
     <div class="line">
       <i data-feather="chevron-right" class="font-medium-2"></i>
     </div>
-    <div class="step" data-target="#step-address" role="tab" id="step-address-trigger">
-      <button type="button" class="step-trigger">
-        <span class="bs-stepper-box">
-          <i data-feather="home" class="font-medium-3"></i>
-        </span>
-        <span class="bs-stepper-label">
-          <span class="bs-stepper-title">Address</span>
-          <span class="bs-stepper-subtitle">Enter Your Address</span>
-        </span>
-      </button>
-    </div>
-    <div class="line">
-      <i data-feather="chevron-right" class="font-medium-2"></i>
-    </div>
     <div class="step" data-target="#step-payment" role="tab" id="step-payment-trigger">
       <button type="button" class="step-trigger">
         <span class="bs-stepper-box">
@@ -439,115 +425,6 @@
       </div>
       <!-- Checkout Place order Ends -->
     </div>
-    <!-- Checkout Customer Address Starts -->
-    <div id="step-address" class="content" role="tabpanel" aria-labelledby="step-address-trigger">
-      <form id="checkout-address" class="list-view product-checkout">
-        <!-- Checkout Customer Address Left starts -->
-        <div class="card">
-          <div class="card-header flex-column align-items-start">
-            <h4 class="card-title">Add New Address</h4>
-            <p class="card-text text-muted mt-25">Be sure to check "Deliver to this address" when you have finished</p>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="checkout-name">Full Name:</label>
-                  <input type="text" id="checkout-name" class="form-control" name="fname" placeholder="John Doe" />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="checkout-number">Mobile Number:</label>
-                  <input
-                    type="number"
-                    id="checkout-number"
-                    class="form-control"
-                    name="mnumber"
-                    placeholder="0123456789"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="checkout-apt-number">Flat, House No:</label>
-                  <input
-                    type="number"
-                    id="checkout-apt-number"
-                    class="form-control"
-                    name="apt-number"
-                    placeholder="9447 Glen Eagles Drive"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="checkout-landmark">Landmark e.g. near apollo hospital:</label>
-                  <input
-                    type="text"
-                    id="checkout-landmark"
-                    class="form-control"
-                    name="landmark"
-                    placeholder="Near Apollo Hospital"
-                  />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="checkout-city">Town/City:</label>
-                  <input type="text" id="checkout-city" class="form-control" name="city" placeholder="Tokyo" />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="checkout-pincode">Pincode:</label>
-                  <input type="number" id="checkout-pincode" class="form-control" name="pincode" placeholder="201301" />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="checkout-state">State:</label>
-                  <input type="text" id="checkout-state" class="form-control" name="state" placeholder="California" />
-                </div>
-              </div>
-              <div class="col-md-6 col-sm-12">
-                <div class="mb-2">
-                  <label class="form-label" cfor="add-type">Address Type:</label>
-                  <select class="form-select" id="add-type">
-                    <option>Home</option>
-                    <option>Work</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-12">
-                <button type="button" class="btn btn-primary btn-next delivery-address">Save And Deliver Here</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Checkout Customer Address Left ends -->
-
-        <!-- Checkout Customer Address Right starts -->
-        <div class="customer-card">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">John Doe</h4>
-            </div>
-            <div class="card-body actions">
-              <p class="card-text mb-0">9447 Glen Eagles Drive</p>
-              <p class="card-text">Lewis Center, OH 43035</p>
-              <p class="card-text">UTC-5: Eastern Standard Time (EST)</p>
-              <p class="card-text">202-555-0140</p>
-              <button type="button" class="btn btn-primary w-100 btn-next delivery-address mt-2">
-                Deliver To This Address
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Checkout Customer Address Right ends -->
-      </form>
-    </div>
-    <!-- Checkout Customer Address Ends -->
     <!-- Checkout Payment Starts -->
     <div id="step-payment" class="content" role="tabpanel" aria-labelledby="step-payment-trigger">
       <form id="checkout-payment" class="list-view product-checkout" onsubmit="return false;">

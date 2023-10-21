@@ -27,7 +27,7 @@ class Coupon extends Resource
 
             Text::make('Code')
                 ->sortable()
-                ->rules('required'),
+                ->rules('required', 'max:255', 'unique:coupons.code', 'min:6'),
 
             Date::make('Expires At')
                 ->sortable()
@@ -36,14 +36,14 @@ class Coupon extends Resource
             Select::make('Discount Type')
                 ->sortable()
                 ->options([
-                    'fixed' => 'Fixed',
-                    'percent' => 'Percentage',
+                    'Fixed' => 'Fixed',
+                    'Percentage' => 'Percentage',
                 ])
                 ->rules('required'),
 
             Number::make('Value')
                 ->sortable()
-                ->rules('required', 'numeric'),
+                ->rules('required', 'numeric', 'min:0', 'max:100'),
         ];
     }
 

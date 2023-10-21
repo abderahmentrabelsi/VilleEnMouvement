@@ -3,8 +3,13 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\MorphToMany;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Product extends Resource
@@ -42,8 +47,12 @@ class Product extends Resource
     {
         return [
             ID::make()->sortable(),
-            MorphToMany::make('Orders'),
-
+            Text::make('Name')->sortable()->rules('required', 'max:255'),
+            Image::make('Image', 'image_url')->rules('required', 'image'),
+            Number::make('Rating')->sortable()->rules('required', 'integer', 'between:0,5'),
+            Currency::make('Price')->sortable()->rules('required', 'numeric', 'min:0'),
+            Textarea::make('Description')->rules('required'),
+            Text::make('Company Name', 'company_name')->sortable()->rules('required', 'max:255'),
         ];
     }
 

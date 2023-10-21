@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
@@ -88,6 +89,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
     });
     /* Route Dashboards */
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('app-ecommerce-checkout');
 
     /* Route Apps */
     Route::group(['prefix' => 'app'], function () {
@@ -113,10 +115,9 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/wishlist/remove/{product}', [WishlistController::class, 'remove'])->name('wishlist.remove');
         Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
-        Route::get('ecommerce/wishlist', [WishlistController::class, 'show'])->name('wishlist.show');
+        Route::get('/ecommerce/wishlist', [WishlistController::class, 'show'])->name('wishlist.show');
 
 
-        Route::get('ecommerce/checkout', [AppsController::class, 'ecommerce_checkout'])->name('app-ecommerce-checkout');
         Route::get('file-manager', [AppsController::class, 'file_manager'])->name('app-file-manager');
         Route::get('access-roles', [AppsController::class, 'access_roles'])->name('app-access-roles');
         Route::get('access-permission', [AppsController::class, 'access_permission'])->name('app-access-permission');
