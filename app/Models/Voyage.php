@@ -16,6 +16,9 @@ class Voyage extends Model
         'nbr_places',
         'lieu_depart',
         'lieu_arrive',
+        'prix',
+        'telephone',
+        'user_id',
     ];
 
     public function orders()

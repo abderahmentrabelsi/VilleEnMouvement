@@ -32,17 +32,23 @@
                             <strong>Number of Places:</strong> {{ $voyage->nbr_places }}<br>
                             <strong>Departure Location:</strong> {{ $voyage->lieu_depart }}<br>
                             <strong>Arrival Location:</strong> {{ $voyage->lieu_arrive }}<br>
+                            <strong>Price:</strong> {{ $voyage->prix }}<br>
+                            <strong>Tel:</strong> {{ $voyage->telephone }}<br>
                         </p>
                         <hr>
                         <div class="text-center">
+                            @if(auth()-> user()->id === $voyage->user_id)
 
                             <a href="{{ route('voyages.edit', ['id' => $voyage->id]) }}" class="btn btn-secondary">Edit</a>
+                            @endif
                             <a href="{{ route('voyages.show', ['id' => $voyage->id]) }}" class="btn btn-primary">Show</a>
+                                @if(auth()-> user()->id === $voyage->user_id)
                             <form action="{{ route('voyages.destroy', ['id' => $voyage->id]) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </form>
+                            @endif
                         </div>
                     </div>
                 </div>

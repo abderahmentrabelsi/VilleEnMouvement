@@ -1,1 +1,43 @@
-"use strict";var date=new Date,nextDay=new Date((new Date).getTime()+864e5),nextMonth=11===date.getMonth()?new Date(date.getFullYear()+1,0,1):new Date(date.getFullYear(),date.getMonth()+1,1),prevMonth=11===date.getMonth()?new Date(date.getFullYear()-1,0,1):new Date(date.getFullYear(),date.getMonth()-1,1),events=[{id:1,url:"",title:"Design Review",start:date,end:nextDay,allDay:!1,extendedProps:{calendar:"Business"}},{id:2,url:"",title:"Meeting With Client",start:new Date(date.getFullYear(),date.getMonth()+1,-11),end:new Date(date.getFullYear(),date.getMonth()+1,-10),allDay:!0,extendedProps:{calendar:"Business"}},{id:3,url:"",title:"Family Trip",allDay:!0,start:new Date(date.getFullYear(),date.getMonth()+1,-9),end:new Date(date.getFullYear(),date.getMonth()+1,-7),extendedProps:{calendar:"Holiday"}},{id:4,url:"",title:"Doctor's Appointment",start:new Date(date.getFullYear(),date.getMonth()+1,-11),end:new Date(date.getFullYear(),date.getMonth()+1,-10),allDay:!0,extendedProps:{calendar:"Personal"}},{id:5,url:"",title:"Dart Game?",start:new Date(date.getFullYear(),date.getMonth()+1,-13),end:new Date(date.getFullYear(),date.getMonth()+1,-12),allDay:!0,extendedProps:{calendar:"ETC"}},{id:6,url:"",title:"Meditation",start:new Date(date.getFullYear(),date.getMonth()+1,-13),end:new Date(date.getFullYear(),date.getMonth()+1,-12),allDay:!0,extendedProps:{calendar:"Personal"}},{id:7,url:"",title:"Dinner",start:new Date(date.getFullYear(),date.getMonth()+1,-13),end:new Date(date.getFullYear(),date.getMonth()+1,-12),allDay:!0,extendedProps:{calendar:"Family"}},{id:8,url:"",title:"Product Review",start:new Date(date.getFullYear(),date.getMonth()+1,-13),end:new Date(date.getFullYear(),date.getMonth()+1,-12),allDay:!0,extendedProps:{calendar:"Business"}},{id:9,url:"",title:"Monthly Meeting",start:nextMonth,end:nextMonth,allDay:!0,extendedProps:{calendar:"Business"}},{id:10,url:"",title:"Monthly Checkup",start:prevMonth,end:prevMonth,allDay:!0,extendedProps:{calendar:"Personal"}}];
+/**
+ * App Calendar Events
+ */
+
+'use strict';
+
+var date = new Date();
+var nextDay = new Date(new Date().getTime() + 24 * 60 * 60 * 1000);
+// prettier-ignore
+var nextMonth = date.getMonth() === 11 ? new Date(date.getFullYear() + 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() + 1, 1);
+// prettier-ignore
+var prevMonth = date.getMonth() === 11 ? new Date(date.getFullYear() - 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() - 1, 1);
+
+var events = [];
+
+function getEvents() {
+    return fetch('http://127.0.0.1:8000/voyagesJson')
+        .then((response) => response.json())
+        .then((data) => {
+            // Mettre à jour le tableau events avec les nouvelles données
+            events = data.map((item) => ({
+                id: item.id,
+                url: 'http://127.0.0.1:8000/voyages/show/' + item.id,
+                title: `${item.lieu_depart}-${item.lieu_arrive}`, // Vous pouvez définir le titre en fonction de vos besoins
+                start: new Date(item.date_voyage),
+                end: new Date(item.date_voyage), // Vous pouvez ajuster cela en fonction de vos besoins
+                allDay: false, // Vous devrez définir cela en fonction de votre logique
+                extendedProps: {
+                    calendar: 'Business',
+                    // Vous pouvez également ajouter d'autres propriétés étendues en fonction de vos besoins
+                },
+            }));
+
+            console.log(events);
+        })
+        .catch((error) => {
+            console.error('Erreur lors de la récupération des données :', error);
+        });
+}
+
+// Appelez la fonction pour récupérer les données et mettre à jour le tableau events
+getEvents();
+
