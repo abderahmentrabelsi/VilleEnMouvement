@@ -13,6 +13,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('complaints.store') }}" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                             <div class="mb-1 row">
                                 <div class="col-sm-3">
                                     <label class="col-form-label" for="title">Title</label>
