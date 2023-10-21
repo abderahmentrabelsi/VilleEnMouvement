@@ -4,104 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="merge">
-      <change afterPath="$PROJECT_DIR$/app/Nova/Dashboards/Main.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Nova/Resource.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Nova/User.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Providers/NovaServiceProvider.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/nova.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lang/vendor/nova/en.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lang/vendor/nova/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/app.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/app.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/app.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty10iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty14iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty1ciurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty1miurt9w6c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g1pty1wiurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy10iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy14iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy1ciurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy1miurt9w6c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g35sy1wiurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy10iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy14iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy1ciurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy1miurt9w6c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4g3joy1wiurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy10iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy14iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy1ciurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy1miurt9w6c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gwzuy1wiurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry10iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry14iurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry1ciurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry1miurt9w6c.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe01mimslybiv1o4x1m8cce4gxzry1wiurt9w6fk2a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5gu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5iu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5ju1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5pu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8-bm5tu1ecvzl.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5gu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5iu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5ju1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5pu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8abc5tu1ecvzl.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5gu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5iu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5ju1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5pu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc8wac5tu1ecvzl.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85gu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85iu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85ju1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85pu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9ib85tu1ecvzl.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5gu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5iu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5ju1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5pu1ecvzl-86y.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe03mimslybiv1o4x1m8cc9yas5tu1ecvzl.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e91kdn4qx5fhyg.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9dkdn4qx5fhyg.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9lkdn4qx5e.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9rkdn4qx5fhyg.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0omimslybiv1o4x1m8cce4e9zkdn4qx5fhyg.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8cce5i9tacvwob5a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8cce9i9tacvwo.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8ccewi9tacvwob5a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8cceyi9tacvwob5a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv11pe0qmimslybiv1o4x1m8ccezi9tacvwob5a.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kj3xzhggvfm.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjdxzhggvfmv2w.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjlxzhggvfmv2w.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjnxzhggvfmv2w.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0amimslybiv1o4x1m8ce2xcx3yop4tqpf-metm0lfuvwonnq4clz0-kjpxzhggvfmv2w.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbw3ubdlel2qol.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbwhubdlel2qol.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbwxubdlel2qol.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbynubdlel2qol.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/fonts/snunitosansv15pe0omimslybiv1o4x1m8cce4odvismz5nzrqy6cmmmu3t3necaafovv9snjbznubdlel2g.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/main.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/manifest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/manifest.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/mix-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/vendor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/vendor.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/nova/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="🎉 feat(backoffice): initial impl. for backoffice&#10;📦 fix(assets): copied assets to public path">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -312,6 +217,11 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php.composer",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -319,13 +229,25 @@
       <recent name="C:\Users\Wahib\Desktop\VilleEnMouvement\public" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Mix Watch">
+  <component name="RunManager" selected="npm.production">
+    <configuration name="production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="production" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="npm.Mix Watch" />
+      <item itemvalue="npm.production" />
       <item itemvalue="PHP Script.Artisan Serve" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.production" />
         <item itemvalue="npm.Mix Watch" />
       </list>
     </recent_temporary>
@@ -454,13 +376,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697225510915</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="🎉 feat(backoffice): initial impl. for backoffice&#10;📦 fix(assets): copied assets to public path">
+      <option name="closed" value="true" />
+      <created>1697894079723</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1697894079723</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value=" Added PostgreSQL Database Connection Configuration&#10;&#10;In this commit, we configured the database connection settings for PostgreSQL in our Laravel project. The following changes were made:&#10;&#10;✅ Updated the .env file to include PostgreSQL as the database connection driver.&#10;⚙️ Set the host, port, database name, username, and password to connect to the PostgreSQL database.&#10; Enabled the PDO PostgreSQL extension in the PHP configuration (php.ini) on Windows.&#10;️ Created a database connection test route and controller to ensure the connection is successful.&#10;️‍️ Verified that the PostgreSQL extension is enabled by checking the PHP Info page.&#10;&#10;This configuration allows our Laravel application to connect to the PostgreSQL database, ensuring proper database functionality.&#10;&#10;#postgresql #laravel #database-connection" />
     <MESSAGE value="✨ [User Authentication and Management Implementation]&#10;&#10; Implemented user authentication and management features.&#10;   - ️ Created the 'users' table in the database to store user information.&#10;   -  Implemented user registration, login, and password reset functionality.&#10;   -  Added user profile management features, allowing users to update their information.&#10;   -  Set up user role management for admin and regular users.&#10;   &#10; Enabled Team management (optional) and configured related database tables.&#10;   -  Created 'teams' and 'team_user' tables for team management.&#10;   -  Implemented team creation, membership, and invitation features.&#10;   &#10; Integrated email notifications for registration and password reset processes.&#10;️ Enhanced security measures, including password hashing and CSRF protection.&#10; Implemented user-friendly error handling and validation messages." />
@@ -470,6 +402,7 @@
     <MESSAGE value=" Added wishlist functionality to ProductController's show method&#10; Modified the show method to pass wishlist items and configurations&#10; Styled the heart icon in wishlist based on user's preferences" />
     <MESSAGE value="bug fix" />
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <MESSAGE value=" feat(backoffice): initial impl. for backoffice&#10; fix(assets): copied assets to public path" />
+    <option name="LAST_COMMIT_MESSAGE" value=" feat(backoffice): initial impl. for backoffice&#10; fix(assets): copied assets to public path" />
   </component>
 </project>
