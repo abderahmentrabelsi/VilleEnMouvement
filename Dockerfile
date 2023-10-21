@@ -15,32 +15,32 @@ RUN apk add bash
 RUN sed -i 's/bin\/ash/bin\/bash/g' /etc/passwd
 
 # Installing PHP 8.1
-RUN apk add --no-cache php8.1 \
-    php8.1-common \
-    php8.1-fpm \
-    php8.1-pdo \
-    php8.1-opcache \
-    php8.1-zip \
-    php8.1-phar \
-    php8.1-iconv \
-    php8.1-cli \
-    php8.1-curl \
-    php8.1-openssl \
-    php8.1-mbstring \
-    php8.1-tokenizer \
-    php8.1-fileinfo \
-    php8.1-json \
-    php8.1-xml \
-    php8.1-xmlwriter \
-    php8.1-simplexml \
-    php8.1-dom \
-    php8.1-pdo_mysql \
-    php8.1-pdo_sqlite \
-    php8.1-tokenizer \
-    php8.1-pecl-redis
+RUN apk add --no-cache php82 \
+    php82-common \
+    php82-fpm \
+    php82-pdo \
+    php82-opcache \
+    php82-zip \
+    php82-phar \
+    php82-iconv \
+    php82-cli \
+    php82-curl \
+    php82-openssl \
+    php82-mbstring \
+    php82-tokenizer \
+    php82-fileinfo \
+    php82-json \
+    php82-xml \
+    php82-xmlwriter \
+    php82-simplexml \
+    php82-dom \
+    php82-pdo_mysql \
+    php82-pdo_sqlite \
+    php82-tokenizer \
+    php82-pecl-redis
 
-# Link PHP binary
-RUN ln -s /usr/bin/php8.1 /usr/bin/php
+RUN ln -s /usr/bin/php82 /usr/bin/php
+
 
 # Installing composer
 RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
