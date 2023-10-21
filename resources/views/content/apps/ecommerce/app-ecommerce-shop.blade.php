@@ -160,10 +160,23 @@
                 </form>
 
 
-                <a href="#" class="btn btn-primary btn-cart">
-                    <i data-feather="shopping-cart"></i>
-                    <span class="add-to-cart">Add to cart</span>
-                </a>
+                <form method="POST" action="{{ in_array($product->id, $cartItems->pluck('id')->toArray()) ? route('cart.remove', $product) : route('cart.add', $product) }}">
+                    @csrf
+                    @if (in_array($product->id, $cartItems->pluck('id')->toArray()))
+                        <button type="submit" class="btn btn-danger btn-cart">
+                            <i data-feather="shopping-cart"></i>
+                            <span>Remove from Cart</span>
+                        </button>
+                    @else
+                        <button type="submit" class="btn btn-primary btn-cart">
+                            <i data-feather="shopping-cart"></i>
+                            <span>Add to Cart</span>
+                        </button>
+                    @endif
+                </form>
+
+
+
             </div>
         </div>
     @endforeach
