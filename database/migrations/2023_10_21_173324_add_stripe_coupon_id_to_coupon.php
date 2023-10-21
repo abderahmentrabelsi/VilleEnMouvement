@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('coupon', function (Blueprint $table) {
+        Schema::table('coupons', function (Blueprint $table) {
             $table->string('stripe_coupon_id')->nullable()->after('code');
         });
     }

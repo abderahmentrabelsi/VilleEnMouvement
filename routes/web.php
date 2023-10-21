@@ -123,7 +123,6 @@ Route::middleware(['auth'])->group(function () {
 
         Route::post('/cart/add/{product}', [CartController::class, 'add'])->name('cart.add');
         Route::post('/cart/remove/{product}', [CartController::class, 'remove'])->name('cart.remove');
-        Route::get('/checkout', [CartController::class, 'show'])->name('cart.show');
 
 
 

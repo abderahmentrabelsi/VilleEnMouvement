@@ -10,48 +10,49 @@ use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
-    public function index()
-    {
-        $billingService = new BillingService(Auth::user());
+  public function index()
+  {
+    $user = Auth::user();
+    $billingService = new BillingService($user);
+    $cartItems = $user->cart;
+    $billingService->ensureStripeCustomerExists();
+    $paymentMethods = $billingService->listPaymentMethods();
 
-        $billingService->ensureStripeCustomerExists();
+    $pageConfigs = [
+      'pageClass' => 'ecommerce-application',
+    ];
 
-        $paymentMethods = $billingService->listPaymentMethods();
+    $breadcrumbs = [
+      ['link' => "/", 'name' => "Home"], ['name' => "Checkout"]
+    ];
 
-        $pageConfigs = [
-            'pageClass' => 'ecommerce-application',
-        ];
-
-        $breadcrumbs = [
-            ['link' => "/", 'name' => "Home"], ['name' => "Checkout"]
-        ];
-
-        return view('/content/apps/ecommerce/app-ecommerce-checkout', [
-            'pageConfigs' => $pageConfigs,
-            'breadcrumbs' => $breadcrumbs,
-            'paymentMethods' => $paymentMethods
-        ]);
-    }
+    return view('/content/apps/ecommerce/app-ecommerce-checkout', [
+      'pageConfigs' => $pageConfigs,
+      'breadcrumbs' => $breadcrumbs,
+      'paymentMethods' => $paymentMethods,
+      'cartItems' => $cartItems,
+    ]);
+  }
 
 
-    public function start_session(Request $request)
-    {
-        $user = Auth::user();
+  public function start_session(Request $request)
+  {
+    $user = Auth::user();
 
-        $billingService = new BillingService($user);
+    $billingService = new BillingService($user);
 
-        $billingService->ensureStripeCustomerExists();
+    $billingService->ensureStripeCustomerExists();
 
-        $products = [
-            [
-                "name" => "Product 1",
-                "unit_amount" => 1000,
-                "quantity" => 1,
-            ]
-        ];
+    $products = [
+      [
+        "name" => "Product 1",
+        "unit_amount" => 1000,
+        "quantity" => 1,
+      ]
+    ];
 
-        $session = $billingService->createCheckoutSession($products);
+    $session = $billingService->createCheckoutSession($products);
 
-        return redirect($session->url, 303);
-    }
+    return redirect($session->url, 303);
+  }
 }

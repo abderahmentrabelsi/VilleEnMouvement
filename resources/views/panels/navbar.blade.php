@@ -152,7 +152,7 @@
             <h6 class="fw-bolder mb-0">Total:</h6>
             <h6 class="text-primary fw-bolder mb-0">$10,999.00</h6>
           </div>
-          <a class="btn btn-primary w-100" href="{{ url('app/ecommerce/checkout') }}">Checkout</a>
+          <a class="btn btn-primary w-100" href="{{ url('/checkout') }}">Checkout</a>
         </li>
       </ul>
     </li>
