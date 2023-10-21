@@ -25,7 +25,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ github.repository }}/laravel:latest
+        tags: ghcr.io/therealmkadmi/villeenmouvement/laravel:latest
         file: Dockerfile
         build-args: |
           CLI_WORKERS=16
