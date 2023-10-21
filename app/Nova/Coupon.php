@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Text;
 
 class Coupon extends Resource
@@ -32,13 +33,17 @@ class Coupon extends Resource
                 ->sortable()
                 ->rules('required', 'date'),
 
+            Select::make('Discount Type')
+                ->sortable()
+                ->options([
+                    'fixed' => 'Fixed',
+                    'percent' => 'Percentage',
+                ])
+                ->rules('required'),
+
             Number::make('Value')
                 ->sortable()
                 ->rules('required', 'numeric'),
-
-            Text::make('Discount Type')
-                ->sortable()
-                ->rules('required'),
         ];
     }
 

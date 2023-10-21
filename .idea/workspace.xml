@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="📦 feat(Coupon): add new Coupon model, controller, request, Nova resource, factory, and migration&#10;🔧 chore(gitignore): ignore node_modules and .idea directories&#10;🔧 chore(php.xml): upgrade PHP language level from 8.0 to 8.1&#10;🔧 chore(workspace.xml): update task counter and last commit message&#10;🔧 chore(composer.json): upgrade PHP version requirement from 8.0.2 to 8.1&#10;&#10;The .gitignore file has been updated to ignore the node_modules and .idea directories, which are not needed in the repository. The PHP language level has been upgraded to 8.1 in th&#10;e php.xml file to take advantage of the latest features and improvements. The workspace.xml file has been updated with a new task counter and last commit message. A new Coupon mode&#10;l, controller, request, Nova resource, factory, and migration have been added to handle coupon-related operations in the application. The PHP version requirement has been upgraded to 8.1 in the composer.json file to ensure compatibility with the latest PHP version.">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/OrderRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Nova/Order.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Nova/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Nova/Voyage.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/OrderFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_21_155150_create_orders_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_21_155536_create_order_items_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" afterDir="false" />
+    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="📦 feat(Order): add new Order model, controller, request, Nova resource, factory, and migration&#10;🔧 chore(.idea): exclude unnecessary directories from project indexing&#10;🔧 chore(Product, Voyage): add orders relationship to Product and Voyage models&#10;The .idea directory changes exclude unnecessary directories from project indexing, improving IDE performance. The new Order model, controller, request, Nova resource, factory, and &#10;migration have been added to handle order-related operations in the application. The orders relationship has been added to the Product and Voyage models to establish a many-to-many polymorphic relationship, allowing both products and voyages to be associated with multiple orders.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Voyage.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Voyage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Nova/Coupon.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Coupon.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Nova/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Nova/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2023_10_21_155150_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2023_10_21_155150_create_orders_table.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,7 +406,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697898988653</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="📦 feat(Order): add new Order model, controller, request, Nova resource, factory, and migration&#10;🔧 chore(.idea): exclude unnecessary directories from project indexing&#10;🔧 chore(Product, Voyage): add orders relationship to Product and Voyage models&#10;The .idea directory changes exclude unnecessary directories from project indexing, improving IDE performance. The new Order model, controller, request, Nova resource, factory, and &#10;migration have been added to handle order-related operations in the application. The orders relationship has been added to the Product and Voyage models to establish a many-to-many polymorphic relationship, allowing both products and voyages to be associated with multiple orders.">
+      <option name="closed" value="true" />
+      <created>1697902168697</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697902168697</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,6 +435,7 @@
     <MESSAGE value=" feat(backoffice): initial impl. for backoffice&#10; fix(assets): copied assets to public path" />
     <MESSAGE value=" bundle(public): added bundled assets to vcs; because dead inside." />
     <MESSAGE value=" feat(Coupon): add new Coupon model, controller, request, Nova resource, factory, and migration&#10; chore(gitignore): ignore node_modules and .idea directories&#10; chore(php.xml): upgrade PHP language level from 8.0 to 8.1&#10; chore(workspace.xml): update task counter and last commit message&#10; chore(composer.json): upgrade PHP version requirement from 8.0.2 to 8.1&#10;&#10;The .gitignore file has been updated to ignore the node_modules and .idea directories, which are not needed in the repository. The PHP language level has been upgraded to 8.1 in th&#10;e php.xml file to take advantage of the latest features and improvements. The workspace.xml file has been updated with a new task counter and last commit message. A new Coupon mode&#10;l, controller, request, Nova resource, factory, and migration have been added to handle coupon-related operations in the application. The PHP version requirement has been upgraded to 8.1 in the composer.json file to ensure compatibility with the latest PHP version." />
-    <option name="LAST_COMMIT_MESSAGE" value=" feat(Coupon): add new Coupon model, controller, request, Nova resource, factory, and migration&#10; chore(gitignore): ignore node_modules and .idea directories&#10; chore(php.xml): upgrade PHP language level from 8.0 to 8.1&#10; chore(workspace.xml): update task counter and last commit message&#10; chore(composer.json): upgrade PHP version requirement from 8.0.2 to 8.1&#10;&#10;The .gitignore file has been updated to ignore the node_modules and .idea directories, which are not needed in the repository. The PHP language level has been upgraded to 8.1 in th&#10;e php.xml file to take advantage of the latest features and improvements. The workspace.xml file has been updated with a new task counter and last commit message. A new Coupon mode&#10;l, controller, request, Nova resource, factory, and migration have been added to handle coupon-related operations in the application. The PHP version requirement has been upgraded to 8.1 in the composer.json file to ensure compatibility with the latest PHP version." />
+    <MESSAGE value=" feat(Order): add new Order model, controller, request, Nova resource, factory, and migration&#10; chore(.idea): exclude unnecessary directories from project indexing&#10; chore(Product, Voyage): add orders relationship to Product and Voyage models&#10;The .idea directory changes exclude unnecessary directories from project indexing, improving IDE performance. The new Order model, controller, request, Nova resource, factory, and &#10;migration have been added to handle order-related operations in the application. The orders relationship has been added to the Product and Voyage models to establish a many-to-many polymorphic relationship, allowing both products and voyages to be associated with multiple orders." />
+    <option name="LAST_COMMIT_MESSAGE" value=" feat(Order): add new Order model, controller, request, Nova resource, factory, and migration&#10; chore(.idea): exclude unnecessary directories from project indexing&#10; chore(Product, Voyage): add orders relationship to Product and Voyage models&#10;The .idea directory changes exclude unnecessary directories from project indexing, improving IDE performance. The new Order model, controller, request, Nova resource, factory, and &#10;migration have been added to handle order-related operations in the application. The orders relationship has been added to the Product and Voyage models to establish a many-to-many polymorphic relationship, allowing both products and voyages to be associated with multiple orders." />
   </component>
 </project>

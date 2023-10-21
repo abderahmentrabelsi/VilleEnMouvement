@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('payment_intent_id');
             $table->foreignId('buyer_id')->constrained('users');
+            $table->enum('status', ['pending', 'completed', 'cancelled'])->default('pending');
             $table->softDeletes();
             $table->timestamps();
         });
