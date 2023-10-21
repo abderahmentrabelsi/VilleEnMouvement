@@ -29,4 +29,9 @@ class Coupon extends Model
         'expires_at' => 'datetime',
         'discount_type' => CouponType::class,
     ];
+
+    public function isExpired(): bool
+    {
+        return $this->expires_at->isPast();
+    }
 }

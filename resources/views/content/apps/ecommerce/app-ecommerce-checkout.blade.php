@@ -80,7 +80,7 @@
                     </div>
                   </div>
                   <span class="text-success mb-1">In Stock</span>
-                                    <span class="delivery-date text-muted">Delivery by, Wed Apr 25</span>
+                  <span class="delivery-date text-muted">Delivery by, Wed Apr 25</span>
                 </div>
                 <div class="item-options text-center">
                   <div class="item-wrapper">
@@ -106,47 +106,23 @@
           <div class="checkout-options">
             <div class="card">
               <div class="card-body">
-                <label class="section-label form-label mb-1">Options</label>
-                <div class="coupons input-group input-group-merge">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Coupons"
-                    aria-label="Coupons"
-                    aria-describedby="input-coupons"
-                  />
-                  <span class="input-group-text text-primary ps-1" id="input-coupons">Apply</span>
-                </div>
-                <hr/>
                 <div class="price-details">
                   <h6 class="price-title">Price Details</h6>
                   <ul class="list-unstyled">
                     <li class="price-detail">
                       <div class="detail-title">Total MRP</div>
-                      <div class="detail-amt">$598</div>
+                      <div class="detail-amt">{{ $cartTotal }}$</div>
                     </li>
                     <li class="price-detail">
-                      <div class="detail-title">Bag Discount</div>
-                      <div class="detail-amt discount-amt text-success">-25$</div>
-                    </li>
-                    <li class="price-detail">
-                      <div class="detail-title">Estimated Tax</div>
-                      <div class="detail-amt">$1.3</div>
-                    </li>
-                    <li class="price-detail">
-                      <div class="detail-title">EMI Eligibility</div>
-                      <a href="#" class="detail-amt text-primary">Details</a>
-                    </li>
-                    <li class="price-detail">
-                      <div class="detail-title">Delivery Charges</div>
-                      <div class="detail-amt discount-amt text-success">Free</div>
+                      <div class="detail-title">Discount</div>
+                      <div class="detail-amt discount-amt text-success">Up to {{$maxDiscount}}$</div>
                     </li>
                   </ul>
                   <hr/>
                   <ul class="list-unstyled">
                     <li class="price-detail">
                       <div class="detail-title detail-total">Total</div>
-                      <div class="detail-amt fw-bolder">$574</div>
+                      <div class="detail-amt fw-bolder">{{ $cartTotal }}$</div>
                     </li>
                   </ul>
                   <button type="button" class="btn btn-primary w-100 btn-next place-order">Place Order</button>
@@ -160,98 +136,74 @@
       </div>
       <!-- Checkout Payment Starts -->
       <div id="step-payment" class="content" role="tabpanel" aria-labelledby="step-payment-trigger">
-        <form id="checkout-payment" class="list-view product-checkout" onsubmit="return false;">
-          <div class="payment-type">
-            <div class="card">
-              <div class="card-header flex-column align-items-start">
-                <h4 class="card-title">Payment options</h4>
-                <p class="card-text text-muted mt-25">Be sure to click on correct payment option</p>
+        <div class="amount-payable checkout-options">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Price Details</h4>
+            </div>
+            <div class="card-body">
+              <ul class="list-unstyled price-details">
+                <li class="price-detail">
+                  <div class="details-title">Total</div>
+                  <div class="detail-amt">
+                    <strong>{{$cartTotal}}$</strong>
+                  </div>
+                </li>
+                <li class="price-detail">
+                  <div class="details-title">Discount</div>
+                  <div class="detail-amt discount-amt text-success"><span id="discount-amount">N/A</span></div>
+                </li>
+              </ul>
+              <hr/>
+              <ul class="list-unstyled price-details">
+                <li class="price-detail">
+                  <div class="details-title">Amount Payable</div>
+                  <div class="detail-amt fw-bolder"><span id="sidebar-total">{{$cartTotal}}$</span></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="payment-type">
+          <div class="card">
+            <div class="card-header flex-column align-items-start">
+              <h4 class="card-title">Payment</h4>
+            </div>
+            <div class="card-body">
+              <h6 class="card-holder-name my-75">John Doe</h6>
+              <div class="form-check">
+                <input type="radio" id="customColorRadio1" name="paymentOptions" class="form-check-input" checked/>
+                <label class="form-check-label" for="customColorRadio1">
+                  Continue with Stripe
+                </label>
               </div>
-              <div class="card-body">
-                <h6 class="card-holder-name my-75">John Doe</h6>
-                <div class="form-check">
-                  <input type="radio" id="customColorRadio1" name="paymentOptions" class="form-check-input" checked/>
-                  <label class="form-check-label" for="customColorRadio1">
-                    US Unlocked Debit Card 12XX XXXX XXXX 0000
-                  </label>
+              <div class="customer-cvv mt-1 row row-cols-lg-auto">
+                <div class="col-3 d-flex align-items-center">
+                  <label class="mb-50 form-label" for="discount-code">Enter Promo Code:</label>
                 </div>
-                <div class="customer-cvv mt-1 row row-cols-lg-auto">
-                  <div class="col-3 d-flex align-items-center">
-                    <label class="mb-50 form-label" for="card-holder-cvv">Enter CVV:</label>
-                  </div>
-                  <div class="col-4 p-0">
-                    <input type="password" class="form-control mb-50 input-cvv" name="input-cvv" id="card-holder-cvv"/>
-                  </div>
-                  <div class="col-3">
-                    <button type="button" class="btn btn-primary btn-cvv mb-50">Continue</button>
-                  </div>
+                <div class="col-4 p-0">
+                  <input type="text" class="form-control mb-50" name="discount-code" id="discount-code" value="{{ session('applied_coupon', '') }}" {{ session()->has('applied_coupon') ? 'disabled' : '' }}/>
                 </div>
-                <hr class="my-2"/>
-                <ul class="other-payment-options list-unstyled">
-                  <li class="py-50">
-                    <div class="form-check">
-                      <input type="radio" id="customColorRadio2" name="paymentOptions" class="form-check-input"/>
-                      <label class="form-check-label" for="customColorRadio2"> Credit / Debit / ATM Card </label>
-                    </div>
-                  </li>
-                  <li class="py-50">
-                    <div class="form-check">
-                      <input type="radio" id="customColorRadio3" name="paymentOptions" class="form-check-input"/>
-                      <label class="form-check-label" for="customColorRadio3"> Net Banking </label>
-                    </div>
-                  </li>
-                  <li class="py-50">
-                    <div class="form-check">
-                      <input type="radio" id="customColorRadio4" name="paymentOptions" class="form-check-input"/>
-                      <label class="form-check-label" for="customColorRadio4"> EMI (Easy Installment) </label>
-                    </div>
-                  </li>
-                  <li class="py-50">
-                    <div class="form-check">
-                      <input type="radio" id="customColorRadio5" name="paymentOptions" class="form-check-input"/>
-                      <label class="form-check-label" for="customColorRadio5"> Cash On Delivery </label>
-                    </div>
-                  </li>
-                </ul>
-                <hr class="my-2"/>
-                <div class="gift-card mb-25">
-                  <p class="card-text">
-                    <i data-feather="plus-circle" class="me-50 font-medium-5"></i>
-                    <span class="align-middle">Add Gift Card</span>
-                  </p>
+                <div class="col-3">
+                  <button type="button" class="btn btn-primary btn-cvv mb-50" id="apply-discount" {{ session()->has('applied_coupon') ? 'disabled' : '' }}>Apply</button>
                 </div>
+                <div class="col-3">
+                  <button type="button" class="btn btn-secondary btn-cvv mb-50" id="remove-discount">Remove</button>
+                </div>
+              </div>
+              <hr class="my-2"/>
+              <div class="gift-card mb-25">
+                <form method="POST" action="{{route("start-checkout-session")}}">
+                  @csrf
+                  <input type="hidden" name="applied_coupon" id="applied-coupon" value="">
+                  <button type="submit" class="btn btn-primary btn-cvv mb-50">Submit</button>
+                </form>
               </div>
             </div>
           </div>
-          <div class="amount-payable checkout-options">
-            <div class="card">
-              <div class="card-header">
-                <h4 class="card-title">Price Details</h4>
-              </div>
-              <div class="card-body">
-                <ul class="list-unstyled price-details">
-                  <li class="price-detail">
-                    <div class="details-title">Price of 3 items</div>
-                    <div class="detail-amt">
-                      <strong>$699.30</strong>
-                    </div>
-                  </li>
-                  <li class="price-detail">
-                    <div class="details-title">Delivery Charges</div>
-                    <div class="detail-amt discount-amt text-success">Free</div>
-                  </li>
-                </ul>
-                <hr/>
-                <ul class="list-unstyled price-details">
-                  <li class="price-detail">
-                    <div class="details-title">Amount Payable</div>
-                    <div class="detail-amt fw-bolder">$699.30</div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </form>
+        </div>
       </div>
       <!-- Checkout Payment Ends -->
       <!-- </div> -->
@@ -269,4 +221,62 @@
 @section('page-script')
   <!-- Page js files -->
   <script src="{{ asset(mix('js/scripts/pages/app-ecommerce-checkout.js')) }}"></script>
+  <script>
+    $(document).ready(function () {
+      const appliedCoupon = $('#applied-coupon').val();
+      if (appliedCoupon) {
+        updateDiscountAndTotal(appliedCoupon);
+      }
+
+      $('#apply-discount').on('click', function (e) {
+        e.preventDefault();
+        const discountCode = $('#discount-code').val();
+        updateDiscountAndTotal(discountCode);
+      });
+
+      $('#remove-discount').on('click', function (e) {
+        e.preventDefault();
+        $.ajax({
+          url: '/checkout/remove-discount',
+          method: 'POST',
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          success: function (response) {
+            if (response.success) {
+              $('#apply-discount').prop('disabled', false);
+              $('#discount-code').prop('disabled', false).val('');
+              $('#applied-coupon').val('');
+              $('#sidebar-total').text(`${response.newTotal}$`);
+              $('#discount-amount').text('N/A');
+            } else {
+              alert(response.error);
+            }
+          }
+        });
+      });
+
+      function updateDiscountAndTotal(discountCode) {
+        $.ajax({
+          url: '/checkout/apply-discount',
+          method: 'POST',
+          data: {code: discountCode},
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+          success: function (response) {
+            if (response.success) {
+              $('#apply-discount').prop('disabled', true);
+              $('#discount-code').prop('disabled', true);
+              $('#applied-coupon').val(discountCode);
+              $('#sidebar-total').text(`${response.newTotal}$`);
+              $('#discount-amount').text(`${response.discountAmount}$`);
+            } else {
+              alert(response.error);
+            }
+          }
+        });
+      }
+    });
+  </script>
 @endsection

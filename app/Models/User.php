@@ -78,4 +78,9 @@ class User extends Authenticatable
       'product_id' // Foreign key on the carts table...
     );
   }
+
+  public function orders()
+  {
+    return $this->hasMany(Order::class);
+  }
 }
