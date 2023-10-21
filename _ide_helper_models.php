@@ -12,10 +12,36 @@
 
 namespace App\Models{
 /**
+ * App\Models\Cart
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $product_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $products
+ * @property-read int|null $products_count
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart whereProductId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Cart whereUserId($value)
+ * @mixin \Eloquent
+ */
+	class IdeHelperCart {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Coupon
  *
  * @property int $id
  * @property string $code
+ * @property string|null $stripe_coupon_id
  * @property \Illuminate\Support\Carbon $expires_at
  * @property float $value
  * @property \App\Models\CouponType $discount_type
@@ -33,6 +59,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereDiscountType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereExpiresAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereStripeCouponId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon whereValue($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Coupon withTrashed()
@@ -144,7 +171,7 @@ namespace App\Models{
  * @property bool $personal_team
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\User|null $owner
+ * @property-read \App\Models\User $owner
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\TeamInvitation> $teamInvitations
  * @property-read int|null $team_invitations_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\User> $users
@@ -206,12 +233,22 @@ namespace App\Models{
  * @property string|null $profile_photo_path
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $stripe_id
+ * @property string|null $pm_type
+ * @property string|null $pm_last_four
+ * @property string|null $trial_ends_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $cart
+ * @property-read int|null $cart_count
  * @property-read \App\Models\Team|null $currentTeam
  * @property-read string $profile_photo_url
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection<int, \Illuminate\Notifications\DatabaseNotification> $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Order> $orders
+ * @property-read int|null $orders_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $ownedTeams
  * @property-read int|null $owned_teams_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Cashier\Subscription> $subscriptions
+ * @property-read int|null $subscriptions_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Team> $teams
  * @property-read int|null $teams_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
@@ -219,8 +256,10 @@ namespace App\Models{
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Product> $wishlist
  * @property-read int|null $wishlist_count
  * @method static \Database\Factories\UserFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|User hasExpiredGenericTrial()
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|User onGenericTrial()
  * @method static \Illuminate\Database\Eloquent\Builder|User query()
  * @method static \Illuminate\Database\Eloquent\Builder|User whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereCurrentTeamId($value)
@@ -229,8 +268,12 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User wherePmLastFour($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User wherePmType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereProfilePhotoPath($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereStripeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereTrialEndsAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereTwoFactorConfirmedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereTwoFactorRecoveryCodes($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereTwoFactorSecret($value)
