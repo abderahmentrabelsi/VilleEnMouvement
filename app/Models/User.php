@@ -59,4 +59,22 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function wishlist()
+    {
+        return $this->belongsToMany(Product::class, 'wishlist', 'user_id', 'product_id');
+    }
+
+    public function items()
+    {
+        return $this->hasMany(WishlistItem::class);
+    }
+
+    // Define the relationship with Complaint model
+    public function complaints()
+    {
+        return $this->hasMany(Complaint::class);
+    }
+
+
 }

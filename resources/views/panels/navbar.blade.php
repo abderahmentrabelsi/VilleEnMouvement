@@ -53,7 +53,10 @@
       <li class="nav-item"><a class="nav-link menu-toggle" href="javascript:void(0);"><i class="ficon"
             data-feather="menu"></i></a></li>
     </ul>
-    <ul class="nav navbar-nav bookmark-icons">
+      <ul class="nav navbar-nav bookmark-icons">
+      <li class="nav-item">
+      <a class="nav-link" href="{{ url('complaints') }}">Any Complaint ?</a>
+      </li>  
       <li class="nav-item d-none d-lg-block"><a class="nav-link" href="{{ url('app/email') }}"
           data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="ficon"
             data-feather="mail"></i></a></li>

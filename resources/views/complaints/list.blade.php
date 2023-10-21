@@ -14,50 +14,68 @@
 @section('content')
     <section id="basic-horizontal-layouts">
         <div class="row">
-            <div class="col-md-12 col-12">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Complaints List</h4>
+                        <h4 class="card-title">Your Complaints</h4>
                     </div>
                     <div class="card-body">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th>Title</th>
-                                <th>Description</th>
-                                <th>Screenshot</th>
-                                <th>Actions</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($complaints as $complaint)
-                                <tr>
-                                    <td>{{ $complaint->title }}</td>
-                                    <td>{{ $complaint->description }}</td>
-                                    <td>
-                                        @if($complaint->screenshot)
-                                            <a href="{{ asset('storage/' . $complaint->screenshot) }}" target="_blank">View Screenshot</a>
-                                        @else
-                                            No Screenshot
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('complaints.edit', $complaint->id) }}" class="btn btn-primary">Edit</a>
-                                        <button type="button" class="btn btn-danger" onclick="confirmDelete({{ $complaint->id }})">Delete</button>
-                                        <form id="delete-form-{{ $complaint->id }}" action="{{ route('complaints.destroy', $complaint->id) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
+    <a href="{{ route('complaints.create') }}" class="btn btn-primary mb-2">Add Complaint</a>
+
+    <form class="d-flex align-items-center justify-content-between mb-2" method="GET" action="{{ route('complaints.index') }}">
+        <div class="form-group">
+            <input type="text" name="search" class="form-control" placeholder="Search by Title" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Screenshot</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($complaints as $complaint)
+            <tr>
+                <td>{{ $complaint->title }}</td>
+                <td>{{ $complaint->description }}</td>
+                <td>{{ $complaint->created_at }}</td>
+                <td>
+                    @if($complaint->screenshot)
+                        <a href="{{ asset('storage/' . $complaint->screenshot) }}" target="_blank">View Screenshot</a>
+                    @else
+                        No Screenshot
+                    @endif
+                </td>
+                <td>
+                    <a href="{{ route('complaints.edit', $complaint->id) }}" class="btn btn-primary">Edit</a>
+                    <button type="button" class="btn btn-danger" onclick="confirmDelete({{ $complaint->id }})">Delete</button>
+                    <form id="delete-form-{{ $complaint->id }}" action="{{ route('complaints.destroy', $complaint->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    <br><br>
+    <div class="d-flex justify-content-center">
+        {{ $complaints->links() }}
+</div>
+</div>
                 </div>
             </div>
         </div>
     </section>
+</section>
 @endsection
 
 <script>
@@ -79,15 +97,15 @@
     }
 </script>
 
-
-
-
 @section('vendor-script')
     <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
     <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
+</section>
 @endsection
+
 @section('page-script')
     <script src="{{ asset(mix('js/scripts/extensions/ext-component-sweet-alerts.js')) }}"></script>
     <script src="{{ asset(mix('vendors/js/extensions/sweetalert2.all.min.js')) }}"></script>
     <script src="{{ asset(mix('vendors/js/extensions/polyfill.min.js')) }}"></script>
+</section>
 @endsection

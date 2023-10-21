@@ -6,6 +6,8 @@ use App\Models\Complaint;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
+
 
 
 class ComplaintController extends Controller
@@ -14,9 +16,19 @@ class ComplaintController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+
+    public function index(Request $request)
     {
-        $complaints = Complaint::all();
+        $search = $request->input('search');
+        $user = auth()->user();
+        $complaints = $user->complaints();
+    
+        if ($search) {
+            $complaints->where('title', 'like', '%' . $search . '%');
+        }
+    
+        $complaints = $complaints->paginate(4); // 4 items per page
+    
         return view('complaints.list', compact('complaints'));
     }
 
@@ -26,34 +38,42 @@ class ComplaintController extends Controller
     }
 
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required',
-            'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
+{
+    $validatedData = $request->validate([
+        'title' => 'required|max:255',
+        'description' => 'required',
+        'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        // Get the currently authenticated user's ID
-        $user_id = auth()->user()->id;
-
-        if ($request->hasFile('screenshot')) {
-            $screenshotPath = $request->file('screenshot')->store('screenshots', 'public');
-            $validatedData['screenshot'] = $screenshotPath;
-        }
-
-        // Associate the user_id with the complaint
-        $validatedData['user_id'] = $user_id;
-
-        Complaint::create($validatedData);
-
-        return redirect()->route('complaints.index')
-            ->with('success', 'Complaint created successfully.');
+    if ($request->hasFile('screenshot')) {
+        $screenshotPath = $request->file('screenshot')->store('screenshots', 'public');
+        $validatedData['screenshot'] = $screenshotPath;
     }
+
+    // Log the user ID
+    $user = auth()->user();
+    $user_id = $user->id;
+
+    // Associate the user_id with the complaint
+    $validatedData['user_id'] = $user_id;
+
+    Complaint::create($validatedData);
+
+    return redirect()->route('complaints.index')
+        ->with('success', 'Complaint created successfully.');
+}
 
 
     public function show($id)
     {
-        $complaint = Complaint::findOrFail($id);
+        // Retrieve the complaint using the given $id only if it belongs to the authenticated user.
+        $complaint = auth()->user()->complaints()->find($id);
+    
+        if (!$complaint) {
+            // Complaint doesn't exist or doesn't belong to the user.
+            return abort(404);
+        }
+    
         return view('complaints.show', compact('complaint'));
     }
 

@@ -5,25 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Complaint extends Model
+class Wishlist extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-        'title',
-        'description',
-        'screenshot',
-        'user_id',
-    ];
-
-    // Define the relationship with User model
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    protected $table = 'complaint';
-
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }
-

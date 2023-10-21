@@ -19,6 +19,8 @@
 
 @section('content')
 <!-- Dashboard Analytics Start -->
+<div id="welcome-notification" data-username="{{ auth()->user()->name }}"></div>
+
 <section id="dashboard-analytics">
   <div class="row match-height">
     <!-- Greetings Card starts -->
