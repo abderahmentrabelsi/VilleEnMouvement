@@ -4,10 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="🎉 feat(backoffice): initial impl. for backoffice&#10;📦 fix(assets): copied assets to public path">
+    <list default="true" id="e4b0442d-96d7-4f41-9eb5-7f5891abbcfc" name="Changes" comment="🚚 bundle(public): added bundled assets to vcs; because dead inside.">
+      <change afterPath="$PROJECT_DIR$/.idea/blade.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/mysql.osA4Bg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/sys.zb4BAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/170a430b-3cb0-4a54-be54-da069236e234/storage_v2/_src_/schema/villenmouvement.hFE5yw.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea-personal.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/laravel-idea.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Artisan_Serve.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/Mix_Watch.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/CouponController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/CouponRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Coupon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Nova/Coupon.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/CouponFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_10_21_152153_create_coupons_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/VilleEnMouvement.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +210,7 @@
       <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -384,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697894079723</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="🚚 bundle(public): added bundled assets to vcs; because dead inside.">
+      <option name="closed" value="true" />
+      <created>1697896156351</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1697896156351</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,6 +435,7 @@
     <MESSAGE value="bug fix" />
     <MESSAGE value="merge" />
     <MESSAGE value=" feat(backoffice): initial impl. for backoffice&#10; fix(assets): copied assets to public path" />
-    <option name="LAST_COMMIT_MESSAGE" value=" feat(backoffice): initial impl. for backoffice&#10; fix(assets): copied assets to public path" />
+    <MESSAGE value=" bundle(public): added bundled assets to vcs; because dead inside." />
+    <option name="LAST_COMMIT_MESSAGE" value=" bundle(public): added bundled assets to vcs; because dead inside." />
   </component>
 </project>
