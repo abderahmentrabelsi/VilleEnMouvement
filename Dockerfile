@@ -3,11 +3,11 @@ FROM php:8.1-cli-alpine
 
 # Install dependencies
 RUN apk add --no-cache \
-    oniguruma-dev \
+    php php-cli php-common php-fpm php-mysql php-zip php-gd php-mbstring php-curl php-xml php-bcmath openssl php-json php-tokenizer \
+    autoconf \
+    g++ \
+    make \
     composer
-
-# Install PHP extensions
-RUN docker-php-ext-install mbstring pdo_mysql
 
 # Copy composer files and install dependencies
 COPY composer.json composer.lock ./
