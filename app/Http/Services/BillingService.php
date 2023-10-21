@@ -2,6 +2,7 @@
 
 namespace App\Http\Services;
 
+use App\Nova\Coupon;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Cashier\Http\Controllers\PaymentController;
 use Stripe\Checkout\Session as StripeSession;
@@ -34,9 +35,11 @@ class BillingService
         $this->user->removePaymentMethod($paymentMethodId);
     }
 
-    public function createCheckoutSession($cart, $discountCoupon = null)
+    public function createCheckoutSession($cart, $couponCode = null)
     {
         $lineItems = $this->prepareLineItems($cart);
+
+
 
         $params = [
             'payment_method_types' => ['card'],
@@ -46,17 +49,16 @@ class BillingService
             'cancel_url' => route('checkout.cancel'),
         ];
 
-        if ($discountCoupon) {
-            $params['discounts'] = [[
-                'coupon' => $discountCoupon,
-            ]];
+        if ($couponCode) {
+            $coupon = Coupon::where('code', $couponCode)->first();
+
+
+
         }
 
         try {
-            $session = StripeSession::create($params, ['stripe_account' => $this->user->stripe_account]);
-            return $session->id;
+            return StripeSession::create($params, ['stripe_account' => $this->user->stripe_account]);
         } catch (ApiErrorException $e) {
-            // Handle error
             throw new \Exception("Error creating checkout session: " . $e->getMessage());
         }
     }

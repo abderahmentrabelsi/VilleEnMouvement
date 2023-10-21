@@ -89,7 +89,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('ecommerce', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
     });
     /* Route Dashboards */
-    Route::get('/checkout', [CheckoutController::class, 'index'])->name('app-ecommerce-checkout');
+
+
+    Route::group(['prefix' => '/checkout'], function () {
+        Route::get('/', [CheckoutController::class, 'index'])->name('checkout');
+        Route::post('/pay', [CheckoutController::class, 'start_session'])->name('start-checkout-session');
+    });
+
 
     /* Route Apps */
     Route::group(['prefix' => 'app'], function () {
