@@ -5,6 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin IdeHelperVoyage
+ */
 class Voyage extends Model
 {
     protected $fillable = [
@@ -14,4 +17,9 @@ class Voyage extends Model
         'lieu_depart',
         'lieu_arrive',
     ];
+
+    public function orders()
+    {
+        return $this->morphToMany(Order::class, 'orderable')->withPivot('quantity');
+    }
 }

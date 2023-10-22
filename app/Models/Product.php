@@ -4,6 +4,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin IdeHelperProduct
+ */
 class Product extends Model
 {
     use HasFactory;
@@ -34,6 +37,11 @@ class Product extends Model
         }
 
         return $starRatingHTML;
+    } // <- ya kolleb mayjiwch hna rendering html
+
+    public function orders()
+    {
+        return $this->morphToMany(Order::class, 'orderable')->withPivot('quantity');
     }
 
 }
