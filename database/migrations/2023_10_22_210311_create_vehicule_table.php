@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('type');
             $table->integer('capacity')->nullable();
             $table->integer('price')->nullable();
-            $table->integer ('plateNumber')->nullable();
+            $table->string ('plateNumber')->nullable();
             $table->integer ('chauffeur')->nullable();
             $table->timestamps();
         });
