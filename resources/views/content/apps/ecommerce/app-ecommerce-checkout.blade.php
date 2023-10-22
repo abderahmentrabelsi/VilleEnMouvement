@@ -59,9 +59,7 @@
             @foreach ($cartItems as $cartItem)
               <div class="card ecommerce-card">
                 <div class="item-img">
-                  <a href="{{ url('app/ecommerce/details') }}">
-                    <img src="{{ asset($cartItem->image_url) }}" alt="img-placeholder"/>
-                  </a>
+                  <img src="{{ asset("/uploads/" .$cartItem->image_url) }}" alt="img-placeholder"/>
                 </div>
                 <div class="card-body">
                   <div class="item-name">
