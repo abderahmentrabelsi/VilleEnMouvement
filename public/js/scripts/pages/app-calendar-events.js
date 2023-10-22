@@ -17,7 +17,7 @@ function getEvents() {
     return fetch('http://127.0.0.1:8000/voyagesJson')
         .then((response) => response.json())
         .then((data) => {
-            // Mettre à jour le tableau events avec les nouvelles données
+            // Mettre à jour le tableau events avec les nouvelles données sssss
             events = data.map((item) => ({
                 id: item.id,
                 url: 'http://127.0.0.1:8000/voyages/show/' + item.id,
