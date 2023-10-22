@@ -37,7 +37,10 @@ RUN apk add --no-cache php82 \
     php82-pdo_mysql \
     php82-pdo_sqlite \
     php82-tokenizer \
-    php82-pecl-redis
+    php82-pecl-redis \
+    php82-bcmath \
+    php82-gd \
+    php82-xmlreader \
 
 RUN ln -s /usr/bin/php82 /usr/bin/php
 
@@ -49,7 +52,9 @@ RUN rm -rf composer-setup.php
 
 # Copy composer files and install dependencies
 COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-scripts --no-autoloader
+RUN composer install
+
+RUN chown -R nobody:nobody /var/www/html/storage
 
 # Copy the rest of the application code
 COPY . .
