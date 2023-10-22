@@ -43,8 +43,8 @@ class Order extends Model
     return $this->belongsTo(User::class, 'buyer_id');
   }
 
-  public function coupon(): \Illuminate\Database\Eloquent\Relations\HasOne
+  public function coupon(): \Illuminate\Database\Eloquent\Relations\BelongsTo
   {
-    return $this->HasOne(Coupon::class, 'coupon_id');
+    return $this->belongsTo(Coupon::class, 'coupon_id');
   }
 }
