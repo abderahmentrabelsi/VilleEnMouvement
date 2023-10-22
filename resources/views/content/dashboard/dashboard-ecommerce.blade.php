@@ -17,6 +17,8 @@
 
 @section('content')
 <!-- Dashboard Ecommerce Starts -->
+<div id="welcome-notification" data-username="{{ auth()->user()->name }}"></div>
+
 <section id="dashboard-ecommerce">
   <div class="row match-height">
     <!-- Medal Card -->

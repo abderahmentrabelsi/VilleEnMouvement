@@ -1,0 +1,44 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v1
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: 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 # galou ta3refha security? birati hanou godemek
+
+
+    - name: Build and push Docker image
+      uses: docker/build-push-action@v2
+      with:
+        context: .
+        push: true
+        tags: ghcr.io/therealmkadmi/villeenmouvement:latest
+        file: Dockerfile
+        build-args: |
+          CLI_WORKERS=16
+
+    - name: Logout of GitHub Container Registry
+      run: docker logout ghcr.io
+
+    - name: Redeploy SmartGym Backend
+      uses: joelwmale/webhook-action@2.3.2
+      with:
+        url: "https://40.76.244.158:9443/api/webhooks/7ce06366-0f01-446f-be3a-8aa2fb703252"
+        headers: '{"repository": "${{ github.repository }}", "event": "deployment"}'
+        body: '{"event": "deployment", "repository": "${{ github.repository }}"}'
+        insecure: true
+
