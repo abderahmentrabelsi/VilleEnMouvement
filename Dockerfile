@@ -51,7 +51,12 @@ RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 RUN rm -rf composer-setup.php
 
 # Copy composer files and install dependencies
-COPY composer.json composer.lock ./
+COPY composer.json composer.lock auth.json ./
+
+# move composer to bin
+RUN mv composer.phar /usr/local/bin/composer
+RUN chmod +x /usr/local/bin/composer
+
 RUN composer install
 
 RUN chown -R nobody:nobody /var/www/html/storage
