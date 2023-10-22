@@ -40,7 +40,7 @@ RUN apk add --no-cache php82 \
     php82-pecl-redis \
     php82-bcmath \
     php82-gd \
-    php82-xmlreader \
+    php82-xmlreader
 
 RUN ln -s /usr/bin/php82 /usr/bin/php
 
