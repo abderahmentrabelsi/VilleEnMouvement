@@ -11,7 +11,59 @@ var nextMonth = date.getMonth() === 11 ? new Date(date.getFullYear() + 1, 0, 1) 
 // prettier-ignore
 var prevMonth = date.getMonth() === 11 ? new Date(date.getFullYear() - 1, 0, 1) : new Date(date.getFullYear(), date.getMonth() - 1, 1);
 
-var events = [];
+var events = [   {
+  id: 2,
+  url: '',
+  title: 'sousse-kairaouen',
+  start: new Date(date.getFullYear(), date.getMonth() + 1, -12),
+  end: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+  allDay: false,
+  extendedProps: {
+    calendar: 'Business'
+  }
+},
+  {
+    id: 2,
+    url: '',
+    title: 'tunis-sfax',
+    start: new Date(date.getFullYear(), date.getMonth() + 1, -11),
+    end: new Date(date.getFullYear(), date.getMonth() + 1, -10),
+    allDay: false,
+    extendedProps: {
+      calendar: 'Business'
+    }},
+  {
+    id: 2,
+    url: '',
+    title: 'bizerte-kairaouen',
+    start: new Date(date.getFullYear(), date.getMonth() + 1, -4),
+    end: new Date(date.getFullYear(), date.getMonth() + 1, -3),
+    allDay: false,
+    extendedProps: {
+      calendar: 'Business'
+    }},
+  {
+    id: 2,
+    url: '',
+    title: 'tataouin-sousse',
+    start: new Date(date.getFullYear(), date.getMonth() + 1, -1),
+    end: new Date(date.getFullYear(), date.getMonth() + 1, -0),
+    allDay: false,
+    extendedProps: {
+      calendar: 'Business'
+    }},
+  {
+    id: 2,
+    url: '',
+    title: 'nabeul-kairaouen',
+    start: new Date(date.getFullYear(), date.getMonth() + 1, -20),
+    end: new Date(date.getFullYear(), date.getMonth() + 1, -19),
+    allDay: false,
+    extendedProps: {
+      calendar: 'Business'
+    },
+  }
+    ];
 
 function getEvents() {
     return fetch('http://127.0.0.1:8000/voyagesJson')
