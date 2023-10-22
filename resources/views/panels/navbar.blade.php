@@ -49,6 +49,12 @@
         @endif
         <div class="navbar-container d-flex content">
           <ul class="nav navbar-nav align-items-center ms-auto">
+          <li class="nav-item">
+      <a class="nav-link" href="{{ url('rating') }}">Rate Us</a>
+      </li> 
+          <li class="nav-item">
+      <a class="nav-link" href="{{ url('complaints') }}">Any Complaint ?</a>
+      </li>  
 
             <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon"
                                                                                          data-feather="{{ $configData['theme'] === 'dark' ? 'sun' : 'moon' }}"></i></a>

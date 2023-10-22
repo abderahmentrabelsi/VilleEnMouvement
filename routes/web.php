@@ -7,6 +7,7 @@ use App\Http\Controllers\LikesController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AppsController;
@@ -23,6 +24,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\DatabaseTestController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RatingController;
 
 //IMPORT WISHLIST CONTROLLER
 use App\Http\Controllers\WishlistController;
@@ -329,6 +331,33 @@ Route::middleware(['auth'])->group(function () {
 
 // locale Route
   Route::get('lang/{locale}', [LanguageController::class, 'swap']);
+
+// Complaints Routes
+Route::get ('/complaints', [ComplaintController::class, 'index'])->name('complaints.index');
+Route::get ('/complaints/create', [ComplaintController::class, 'create'])->name('complaints.create');
+
+Route::post ('/complaints', [ComplaintController::class, 'store'])->name('complaints.store');
+Route::get ('/complaints/{complaint}', [ComplaintController::class, 'show'])->name('complaints.show');
+
+Route::get ('/complaints/{complaint}/edit', [ComplaintController::class, 'edit'])->name('complaints.edit');
+Route::put ('/complaints/{complaint}', [ComplaintController::class, 'update'])->name('complaints.update');
+
+Route::delete ('/complaints/{complaint}', [ComplaintController::class, 'destroy'])->name('complaints.destroy');
+
+// Route::resource('complaints', ComplaintController::class);
+
+// Routes for Rating
+Route::get('/rating', [RatingController::class, 'index'])->name('ratings.index');
+Route::get('/rating/create', [RatingController::class, 'create'])->name('ratings.create');
+
+Route::post('/rating', [RatingController::class, 'store'])->name('ratings.store');
+Route::get('/rating/{rating}', [RatingController::class, 'show'])->name('ratings.show');
+
+Route::get('/rating/{rating}/edit', [RatingController::class, 'edit'])->name('ratings.edit');
+Route::put('/rating/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+
+Route::delete('/rating/{rating}', [RatingController::class, 'destroy'])->name('ratings.destroy');
+
 
 });
 
