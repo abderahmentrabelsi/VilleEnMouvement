@@ -5,6 +5,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\VehiculeController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
@@ -91,7 +92,8 @@ Route::middleware(['auth'])->group(function () {
   Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
   Route::post('/likes', [LikesController::class, 'store'])->name('likes.store');
   
-
+//mmn
+Route::resource('vehicules',VehiculeController::class);
 
 
   Route::get('/test-database-connection', [DatabaseTestController::class, 'testConnection']);

@@ -13,13 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('vehicule', function (Blueprint $table) {
             $table->id();
+            $table->string('model');
+            $table->string('type');
+            $table->integer('capacity')->nullable();
+            $table->integer('price')->nullable();
+            $table->integer ('plateNumber')->nullable();
+            $table->integer ('chauffeur')->nullable();
             $table->timestamps();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('title');
-            $table->string('content');
         });
     }
 
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('vehicule');
     }
 };
