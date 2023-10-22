@@ -15,15 +15,17 @@
                             @csrf
                             <div class="mb-1 row">
                                 <div class="col-sm-3">
-                                    <label class="col-form-label" for="rating_value">Rating Value</label>
+                                    <label class="col-form-label" for="rating_value">Rating</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="number" id="rating_value" class="form-control @error('rating_value') is-invalid @enderror" name="rating_value" placeholder="Rating Value" />
-                                    @error('rating_value')
-                                        <span class="invalid-feedback" role="alert">
-                                            {{ $message }}
-                                        </span>
-                                    @enderror
+                                    <div class="rating">
+                                        <i class="fas fa-star" data-rating="1"></i>
+                                        <i class="fas fa-star" data-rating="2"></i>
+                                        <i class="fas fa-star" data-rating="3"></i>
+                                        <i class="fas fa-star" data-rating="4"></i>
+                                        <i class="fas fa-star" data-rating="5"></i>
+                                    </div>
+                                    <input type="hidden" name="rating_value" id="rating_value" value="0">
                                 </div>
                             </div>
 
@@ -41,8 +43,6 @@
                                 </div>
                             </div>
 
-                            <!-- Add more form fields for other attributes here -->
-
                             <div class="col-sm-9 offset-sm-3">
                                 <button type="submit" class="btn btn-primary me-1">Submit</button>
                                 <button type="reset" class="btn btn-outline-secondary">Reset</button>
@@ -53,4 +53,21 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('page-script')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $(".rating i").click(function() {
+            var ratingValue = $(this).data("rating");
+            $("#rating_value").val(ratingValue);
+            $(this).addClass("fas").removeClass("far"); // Add 'fas' class to make it solid
+            $(this).prevAll().addClass("fas").removeClass("far");
+            $(this).nextAll().removeClass("fas").addClass("far");
+        });
+    });
+</script>
 @endsection
