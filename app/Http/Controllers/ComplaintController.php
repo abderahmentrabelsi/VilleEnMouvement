@@ -40,8 +40,8 @@ class ComplaintController extends Controller
     public function store(Request $request)
 {
     $validatedData = $request->validate([
-        'title' => 'required|max:255',
-        'description' => 'required',
+        'title' => 'required|string|between:2,10',
+        'description' => 'required|string|between:10,10000',
         'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
@@ -88,20 +88,20 @@ class ComplaintController extends Controller
         $complaint = Complaint::findOrFail($id);
 
         $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required',
+            'title' => 'required|string|between:2,10',
+            'description' => 'required|string|between:10,10000',
             'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        if ($request->hasFile('screenshot')) {
-            $screenshotPath = $request->file('screenshot')->store('screenshots', 'public');
-            $validatedData['screenshot'] = $screenshotPath;
-        }
+    if ($request->hasFile('screenshot')) {
+        $screenshotPath = $request->file('screenshot')->store('screenshots', 'public');
+        $validatedData['screenshot'] = $screenshotPath;
+    }
 
-        $complaint->update($validatedData);
+    $complaint->update($validatedData);
 
-        return redirect()->route('complaints.index')
-            ->with('success', 'Complaint updated successfully.');
+    return redirect()->route('complaints.index')
+        ->with('success', 'Complaint updated successfully.');
     }
 
     public function destroy($id)

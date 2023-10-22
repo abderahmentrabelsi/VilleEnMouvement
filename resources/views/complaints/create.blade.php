@@ -18,7 +18,12 @@
                                     <label class="col-form-label" for="title">Title</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="title" class="form-control" name="title" placeholder="Title" />
+                                    <input type="text" id="title" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Title" />
+                                    @error('title')
+                                        <span class="invalid-feedback" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -27,7 +32,12 @@
                                     <label class="col-form-label" for="description">Description</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <textarea id="description" class="form-control" name="description" placeholder="Description"></textarea>
+                                    <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Description"></textarea>
+                                    @error('description')
+                                        <span class="invalid-feedback" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -36,7 +46,12 @@
                                     <label class="col-form-label" for="screenshot">Screenshot</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="file" id="screenshot" class="form-control" name="screenshot" accept="image/*" />
+                                    <input type="file" id="screenshot" class="form-control @error('screenshot') is-invalid @enderror" name="screenshot" accept="image/*" />
+                                    @error('screenshot')
+                                        <span class="invalid-feedback" role="alert">
+                                            {{ $message }}
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
 
