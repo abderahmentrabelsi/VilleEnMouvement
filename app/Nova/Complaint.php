@@ -9,6 +9,8 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\File;
+use Laravel\Nova\Filters;
+use Laravel\Nova\Fields\Date;
 
 class Complaint extends Resource
 {
@@ -33,6 +35,8 @@ class Complaint extends Resource
      */
     public static $search = [
         'id',
+        'title',
+        'created_at',
     ];
 
     /**
@@ -65,10 +69,10 @@ class Complaint extends Resource
         return [];
     }
 
-    public function filters(NovaRequest $request)
-    {
-        return [];
-    }
+    public function filters(Request $request)
+{
+    return [];
+}
 
     public function lenses(NovaRequest $request)
     {
