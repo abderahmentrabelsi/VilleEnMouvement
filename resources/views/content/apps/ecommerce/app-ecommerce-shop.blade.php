@@ -12,6 +12,11 @@
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-sliders.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-ecommerce.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
+  <style>
+    .content-body {
+      margin-left: unset !important;
+    }
+  </style>
 @endsection
 
 
