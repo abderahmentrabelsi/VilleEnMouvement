@@ -45,7 +45,7 @@
                 </g>
               </g>
             </svg>
-            <h2 class="brand-text text-primary ms-1">Vuexy</h2>
+            <h2 class="brand-text text-primary ms-1">VilleEnMouvement</h2>
           </a>
 
           <h4 class="card-title mb-1">Reset Password 🔒</h4>

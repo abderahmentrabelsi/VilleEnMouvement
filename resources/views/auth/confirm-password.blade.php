@@ -45,10 +45,10 @@
                 </g>
               </g>
             </svg>
-            <h2 class="brand-text text-primary ms-1">Vuexy</h2>
+            <h2 class="brand-text text-primary ms-1">VilleEnMouvement</h2>
           </a>
 
-          <h4 class="card-title mb-1">Welcome to Vuexy! 👋</h4>
+          <h4 class="card-title mb-1">Welcome to VilleEnMouvement! 👋</h4>
           <p class="card-text mb-2">Please confirm your password before continuing.</p>
 
           <form class="auth-login-form mt-2" method="POST" action="{{ route('password.confirm') }}">
