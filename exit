@@ -1,0 +1,60 @@
+[33mcommit 5338a677b37edc383178b21c0d96e2bf30b1e8ca[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: aboud <abderrahmen.trabelsi@esprit.tn>
+Date:   Sun Oct 1 15:51:11 2023 +0100
+
+    🌟 [Avatar/Upload Image Feature Added]
+    
+    📷 Implemented the ability for users to upload avatars or profile images.
+       - Users can now upload and set profile pictures.
+       - Added image upload functionality to user profiles.
+       - Supported image formats include JPG, PNG, and GIF.
+    
+    💾 Images are securely stored in the server's storage directory.
+    
+    🎉 DONE
+    
+    📌 Reminder: Don't forget to git pull every day when you open the project.
+
+[33mcommit aa8f9ae7f87fdd452bca53e958080e9358741001[m
+Author: aboud <abderrahmen.trabelsi@esprit.tn>
+Date:   Sun Oct 1 15:37:55 2023 +0100
+
+    ✨ [User Authentication and Management Implementation]
+    
+    🔐 Implemented user authentication and management features.
+       - 🗃️ Created the 'users' table in the database to store user information.
+       - 🌐 Implemented user registration, login, and password reset functionality.
+       - 📝 Added user profile management features, allowing users to update their information.
+       - 🔒 Set up user role management for admin and regular users.
+    
+    👥 Enabled Team management (optional) and configured related database tables.
+       - 🏢 Created 'teams' and 'team_user' tables for team management.
+       - 🚀 Implemented team creation, membership, and invitation features.
+    
+    📧 Integrated email notifications for registration and password reset processes.
+    🛡️ Enhanced security measures, including password hashing and CSRF protection.
+    🚦 Implemented user-friendly error handling and validation messages.
+
+[33mcommit f52b2e75b812f13f52138cbcc57b27d7d765e8e4[m
+Author: aboud <abderrahmen.trabelsi@esprit.tn>
+Date:   Sat Sep 30 12:12:51 2023 +0100
+
+    🔗 Added PostgreSQL Database Connection Configuration
+    
+    In this commit, we configured the database connection settings for PostgreSQL in our Laravel project. The following changes were made:
+    
+    ✅ Updated the .env file to include PostgreSQL as the database connection driver.
+    ⚙️ Set the host, port, database name, username, and password to connect to the PostgreSQL database.
+    🔌 Enabled the PDO PostgreSQL extension in the PHP configuration (php.ini) on Windows.
+    🛠️ Created a database connection test route and controller to ensure the connection is successful.
+    👁️‍🗨️ Verified that the PostgreSQL extension is enabled by checking the PHP Info page.
+    
+    This configuration allows our Laravel application to connect to the PostgreSQL database, ensuring proper database functionality.
+    
+    #postgresql #laravel #database-connection
+
+[33mcommit 0129d69aa993a553ecd6eefbcaeaa64e10fbaf44[m
+Author: aboud <abderrahmen.trabelsi@esprit.tn>
+Date:   Sat Sep 30 11:52:44 2023 +0100
+
+    first commit

@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\LikesController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
@@ -80,7 +83,14 @@ Route::middleware(['auth'])->group(function () {
 
 // Main Page Route
   Route::get('/', [ProductController::class, 'index'])->name('products.index');
-
+  Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+  Route::get('/posts/edit', [PostController::class, 'edit'])->name('posts.edit');
+  Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+  Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+  Route::post('/comments', [CommentsController::class, 'store'])->name('comments.store');
+  Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
+  Route::post('/likes', [LikesController::class, 'store'])->name('likes.store');
+  
 
 
 
