@@ -51,19 +51,12 @@ RUN apk upgrade
 RUN apk add bash
 RUN alias composer='php /usr/bin/composer'
 
-# Copy composer files and install dependencies
-COPY composer.json composer.lock auth.json ./
-
-# move composer to bin
-
-RUN composer install
 
 RUN chown -R nobody:nobody /var/www/html/storage
 
-# Copy the rest of the application code
 COPY . .
+RUN composer install
 
-# Generate autoload files
 RUN composer dump-autoload --optimize
 
 # Set the environment variable for CLI server workers
