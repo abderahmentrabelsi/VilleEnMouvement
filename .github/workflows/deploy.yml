@@ -34,10 +34,10 @@ jobs:
     - name: Logout of GitHub Container Registry
       run: docker logout ghcr.io
 
-    - name: Redeploy SmartGym Backend
+    - name: Redeploy
       uses: joelwmale/webhook-action@2.3.2
       with:
-        url: "https://40.76.244.158:9443/api/webhooks/7ce06366-0f01-446f-be3a-8aa2fb703252"
+        url: "https://40.76.244.158:9443/api/webhooks/12d88e4d-e28d-4912-bec3-e89d650611db"
         headers: '{"repository": "${{ github.repository }}", "event": "deployment"}'
         body: '{"event": "deployment", "repository": "${{ github.repository }}"}'
         insecure: true

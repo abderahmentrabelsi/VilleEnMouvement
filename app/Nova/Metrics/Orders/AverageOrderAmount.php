@@ -3,7 +3,6 @@
 namespace App\Nova\Metrics\Orders;
 
 use App\Models\Order;
-use App\Nova\Metrics\Model;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
 use Laravel\Nova\Nova;
