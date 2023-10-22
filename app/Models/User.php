@@ -75,6 +75,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Complaint::class);
     }
+    // Define the relationship with Rating model
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
 
   public function cart()
   {

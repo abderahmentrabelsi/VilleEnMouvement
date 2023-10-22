@@ -21,6 +21,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\DatabaseTestController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RatingController;
 
 //IMPORT WISHLIST CONTROLLER
 use App\Http\Controllers\WishlistController;
@@ -334,6 +335,19 @@ Route::put ('/complaints/{complaint}', [ComplaintController::class, 'update'])->
 Route::delete ('/complaints/{complaint}', [ComplaintController::class, 'destroy'])->name('complaints.destroy');
 
 // Route::resource('complaints', ComplaintController::class);
+
+// Routes for Rating
+Route::get('/rating', [RatingController::class, 'index'])->name('ratings.index');
+Route::get('/rating/create', [RatingController::class, 'create'])->name('ratings.create');
+
+Route::post('/rating', [RatingController::class, 'store'])->name('ratings.store');
+Route::get('/rating/{rating}', [RatingController::class, 'show'])->name('ratings.show');
+
+Route::get('/rating/{rating}/edit', [RatingController::class, 'edit'])->name('ratings.edit');
+Route::put('/rating/{rating}', [RatingController::class, 'update'])->name('ratings.update');
+
+Route::delete('/rating/{rating}', [RatingController::class, 'destroy'])->name('ratings.destroy');
+
 
 });
 

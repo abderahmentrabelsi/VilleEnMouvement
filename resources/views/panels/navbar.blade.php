@@ -50,6 +50,9 @@
         <div class="navbar-container d-flex content">
           <ul class="nav navbar-nav align-items-center ms-auto">
           <li class="nav-item">
+      <a class="nav-link" href="{{ url('rating') }}">Rate Us</a>
+      </li> 
+          <li class="nav-item">
       <a class="nav-link" href="{{ url('complaints') }}">Any Complaint ?</a>
       </li>  
 

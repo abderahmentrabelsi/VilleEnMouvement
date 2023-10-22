@@ -11,6 +11,11 @@
                         <h4 class="card-title">Create Complaint</h4>
                     </div>
                     <div class="card-body">
+                    @if(session('alreadyRated'))
+                            <script>
+                                alert('You have already rated! You can only rate once.');
+                            </script>
+                        @endif
                         <form method="POST" action="{{ route('complaints.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-1 row">

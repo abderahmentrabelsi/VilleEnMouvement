@@ -26,7 +26,13 @@ class Complaint extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class);
+    }
+
     protected $table = 'complaint';
+    
 
 }
 
