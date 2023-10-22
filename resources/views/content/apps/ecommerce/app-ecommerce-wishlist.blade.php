@@ -21,7 +21,7 @@
                 <a href="{{ url('app/ecommerce/details/' . $item->id) }}">
                     <img
                         class="img-fluid card-img-top"
-                        src="{{ $item->image_url }}"
+                        src="{{ "/uploads/" . $item->image_url }}"
                         alt="img-placeholder"
                     />
                 </a>

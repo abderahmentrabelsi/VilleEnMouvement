@@ -27,7 +27,7 @@
               <div class="col-12 col-md-5 d-flex align-items-center justify-content-center mb-2 mb-md-0">
                   <div class="d-flex align-items-center justify-content-center">
                       <img
-                          src="{{ $product->image_url }}"
+                          src="{{"/uploads/" . $product->image_url }}"
                           class="img-fluid product-img"
                           alt="product image"
                       />

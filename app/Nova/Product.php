@@ -51,7 +51,7 @@ class Product extends Resource
         return [
             ID::make()->sortable(),
             Text::make('Name')->sortable()->rules('required', 'max:255'),
-            Image::make('Image', 'image_url')->rules('required', 'image'),
+            Image::make('Image', 'image_url')->rules('required', 'image')->disk('public_images'),
             Number::make('Rating')->sortable()->rules('required', 'integer', 'between:0,5'),
             Currency::make('Price')->sortable()->rules('required', 'numeric', 'min:0'),
             Textarea::make('Description')->rules('required'),

@@ -12,11 +12,14 @@
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-sliders.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/pages/app-ecommerce.css')) }}">
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
+  <style>
+    .content-body {
+      margin-left: unset !important;
+    }
+  </style>
 @endsection
 
-@section('content-sidebar')
-  @include('content/apps/ecommerce/app-ecommerce-sidebar')
-@endsection
+
 
 @section('content')
   <!-- E-commerce Content Section Starts -->
@@ -107,7 +110,7 @@
           <a href="{{ url('app/ecommerce/details/' . $product->id) }}">
             <img
               class="img-fluid card-img-top"
-              src="{{ $product->image_url }}"
+              src="{{ "/uploads/" .$product->image_url }}"
               alt="img-placeholder"
             />
           </a>
