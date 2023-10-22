@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\Users\Users;
+use App\Nova\Metrics\Users\UserTrend;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use Laravel\Nova\Fields\Gravatar;
@@ -73,7 +75,10 @@ class User extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+          new Users,
+          new UserTrend
+        ];
     }
 
     /**

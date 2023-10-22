@@ -3,8 +3,11 @@
 namespace App\Nova;
 
 use App\Models\Order as OrderModel;
+use App\Nova\Metrics\Orders\AverageOrderAmount;
+use App\Nova\Metrics\OrderTrend;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\MorphToMany;
@@ -41,12 +44,16 @@ class Order extends Resource
                     'cancelled' => 'Cancelled',
                 ])
                 ->rules('required'),
+          HasOne::make('Coupon', 'coupon', Coupon::class)
         ];
     }
 
     public function cards(Request $request): array
     {
-        return [];
+        return [
+          new AverageOrderAmount,
+          new OrderTrend,
+        ];
     }
 
     public function filters(Request $request): array

@@ -2,6 +2,9 @@
 
 namespace App\Nova;
 
+use App\Nova\Metrics\ProductPerCompany;
+use App\Nova\Metrics\Products;
+use App\Nova\Metrics\ProductTrend;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\ID;
@@ -64,7 +67,11 @@ class Product extends Resource
      */
     public function cards(NovaRequest $request)
     {
-        return [];
+        return [
+          new Products,
+          new ProductPerCompany,
+          new ProductTrend,
+        ];
     }
 
     /**

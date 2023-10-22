@@ -13,7 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('orders', function (Blueprint $table) {
+            $table
+                ->foreignId('coupon_id')
+                ->nullable()
+                ->constrained('coupons')
+                ->onDelete('set null');
+        });
     }
 
     /**
@@ -23,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('orders', function (Blueprint $table) {
+            //
+        });
     }
 };

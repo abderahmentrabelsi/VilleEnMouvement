@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @mixin IdeHelperWishlist
+ * @mixin IdeHelperCart
  */
 class Cart extends Model
 {
@@ -18,6 +18,6 @@ class Cart extends Model
 
     public function products()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->hasMany(Product::class);
     }
 }

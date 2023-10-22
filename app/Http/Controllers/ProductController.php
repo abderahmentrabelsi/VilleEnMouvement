@@ -38,7 +38,7 @@ class ProductController extends Controller
 
         // Get the user's wishlist items
         $wishlistItems = auth()->user()->wishlist;
-        $cartItems = auth()->user()->cart; // Fetch cart items for the user
+        $cartItems = auth()->user()->cart()->get(); // Fetch cart items for the user
 
 
         return view('content.apps.ecommerce.app-ecommerce-shop', compact('pageConfigs', 'breadcrumbs', 'products', 'wishlistItems', 'cartItems'));
