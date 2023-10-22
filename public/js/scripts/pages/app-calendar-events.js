@@ -21,7 +21,7 @@ function getEvents() {
             events = data.map((item) => ({
                 id: item.id,
                 url: 'http://127.0.0.1:8000/voyages/show/' + item.id,
-                title: `${item.lieu_depart}-${item.lieu_arrive}`, // Vous pouvez définir le titre en fonction de vos besoins
+                title: `${item.lieu_depart}-${item.lieu_arrive}`, // Vous pouvez définir le titre en fonction de vos besoinssss
                 start: new Date(item.date_voyage),
                 end: new Date(item.date_voyage), // Vous pouvez ajuster cela en fonction de vos besoins
                 allDay: false, // Vous devrez définir cela en fonction de votre logique
