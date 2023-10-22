@@ -1,18 +1,18 @@
 {
-    "menu": [
+  "menu": [
+    {
+      "name": "Dashboards",
+      "badge": "3",
+      "badgeClass": "badge badge-light-warning rounded-pill ms-auto me-1",
+      "icon": "home",
+      "slug": "",
+      "submenu": [
         {
-            "name": "Dashboards",
-            "badge": "3",
-            "badgeClass": "badge badge-light-warning rounded-pill ms-auto me-1",
-            "icon": "home",
-            "slug": "",
-            "submenu": [
-                {
-                    "url": "/voyages",
-                    "name": "Voyages",
-                    "icon": "circle",
-                    "slug": "dashboard-ecommerce"
-                },
+          "url": "/voyages",
+          "name": "Voyages",
+          "icon": "circle",
+          "slug": "dashboard-ecommerce"
+        },
         {
           "url": "dashboard/analytics",
           "name": "Analytics",
@@ -27,7 +27,6 @@
         }
       ]
     },
-
     {
       "navheader": "Apps & Pages",
       "slug": ""
@@ -129,7 +128,6 @@
           "icon": "circle",
           "slug": "app-ecommerce-shop"
         },
-
         {
           "url": "app/ecommerce/wishlist",
           "name": "Wishlist",
@@ -267,9 +265,21 @@
           "icon": "circle",
           "slug": "",
           "submenu": [
-            { "url": "page/blog/list", "name": "List", "slug": "page-blog-list" },
-            { "url": "page/blog/detail", "name": "Detail", "slug": "page-blog-detail" },
-            { "url": "page/blog/edit", "name": "Edit", "slug": "page-blog-edit" }
+            {
+              "url": "page/blog/list",
+              "name": "List",
+              "slug": "page-blog-list"
+            },
+            {
+              "url": "page/blog/detail",
+              "name": "Detail",
+              "slug": "page-blog-detail"
+            },
+            {
+              "url": "page/blog/edit",
+              "name": "Edit",
+              "slug": "page-blog-edit"
+            }
           ]
         },
         {

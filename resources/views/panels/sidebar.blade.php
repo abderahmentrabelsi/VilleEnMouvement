@@ -41,7 +41,7 @@ $configData = Helper::applClasses();
               </g>
             </svg>
           </span>
-          <h2 class="brand-text">Vuexy</h2>
+          <h4 class="brand-text">VilleEM</h4>
         </a>
       </li>
       <li class="nav-item nav-toggle">

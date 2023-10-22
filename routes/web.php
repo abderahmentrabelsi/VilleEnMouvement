@@ -79,7 +79,10 @@ Route::middleware(['auth'])->group(function () {
 
 
 // Main Page Route
-  Route::get('/', [DashboardController::class, 'dashboardEcommerce'])->name('dashboard-ecommerce');
+  Route::get('/', [ProductController::class, 'index'])->name('products.index');
+
+
+
 
   Route::get('/test-database-connection', [DatabaseTestController::class, 'testConnection']);
 
