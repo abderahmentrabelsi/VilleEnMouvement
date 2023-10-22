@@ -3,6 +3,8 @@
 namespace App\Nova;
 
 use App\Models\Coupon as CouponModel;
+use App\Nova\Metrics\Coupons\TotalCoupons;
+use App\Nova\Metrics\CouponsPerType;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
@@ -49,7 +51,10 @@ class Coupon extends Resource
 
   public function cards(Request $request): array
   {
-    return [];
+    return [
+      new TotalCoupons,
+      new CouponsPerType,
+    ];
   }
 
   public function filters(Request $request): array

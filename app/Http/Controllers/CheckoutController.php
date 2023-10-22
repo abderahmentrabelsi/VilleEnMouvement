@@ -72,6 +72,8 @@ class CheckoutController extends Controller
     $order->buyer()->associate($user);
     $order->payment_intent_id = $session->id;
     $order->status = 'pending';
+    $order->sum = $total;
+    $order->coupon()->associate($coupon);
     $order->save();
 
     foreach ($user->cart as $item) {
