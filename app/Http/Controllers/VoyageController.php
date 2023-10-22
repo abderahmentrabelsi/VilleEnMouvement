@@ -31,6 +31,8 @@ class VoyageController extends Controller
         })
             ->paginate(10);
 
+
+
         return view('voyages.index', compact('voyages'));
     }
 
@@ -40,19 +42,23 @@ class VoyageController extends Controller
     }
 
     public function store(Request $request)
-{
-    $request->validate([
-        'date_voyage' => 'required',
-        'heure' => 'required',
-        'nbr_places' => 'required',
-        'lieu_depart' => 'required',
-        'lieu_arrive' => 'required',
-    ]);
+    {
+        $request->validate([
+            'date_voyage' => 'required',
+            'heure' => 'required',
+            'nbr_places' => 'required',
+            'lieu_depart' => 'required',
+            'lieu_arrive' => 'required',
+            'prix' => 'required',
+            'telephone' => 'required',
 
-    Voyage::create($request->all()) ;
+        ]);
 
-    return redirect()->route('voyages.index')->with('success', 'Voyage created successfully.');
-}
+        $voyage = Voyage::create($request->all());
+        $voyage->update(['user_id' => auth()->id()]);
+
+        return redirect()->route('voyages.index')->with('success', 'Voyage created successfully.');
+    }
 
 
 
@@ -89,7 +95,5 @@ class VoyageController extends Controller
         $voyage = Voyage::find($id);
         return view('voyages.show', compact('voyage'));
     }
-
-
 
 }
