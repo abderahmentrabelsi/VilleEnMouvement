@@ -45,17 +45,13 @@ RUN apk add --no-cache php82 \
 RUN ln -s /usr/bin/php82 /usr/bin/php
 
 
-# Installing composer
-RUN curl -sS https://getcomposer.org/installer -o composer-setup.php
-RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-RUN rm -rf composer-setup.php
+RUN curl -s https://getcomposer.org/installer | php
+RUN alias composer='php composer.phar'
 
 # Copy composer files and install dependencies
 COPY composer.json composer.lock auth.json ./
 
 # move composer to bin
-RUN mv composer.phar /usr/local/bin/composer
-RUN chmod +x /usr/local/bin/composer
 
 RUN composer install
 
