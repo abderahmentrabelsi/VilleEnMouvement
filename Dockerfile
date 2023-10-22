@@ -52,9 +52,8 @@ RUN apk add bash
 RUN alias composer='php /usr/bin/composer'
 
 
-RUN chown -R nobody:nobody /var/www/html/storage
-
 COPY . .
+RUN chown -R nobody:nobody /var/www/html/storage
 RUN composer install
 
 RUN composer dump-autoload --optimize
