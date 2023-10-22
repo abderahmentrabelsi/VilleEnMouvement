@@ -1,92 +1,74 @@
 <?php
 
 namespace App\Nova;
-
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Date;
+use Laravel\Nova\Fields\BelongsTo; // Ajout du champ BelongsTo pour user_id
 use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Voyage extends Resource
 {
-    /**
-     * The model the resource corresponds to.
-     *
-     * @var class-string<\App\Models\Voyage>
-     */
-    public static $model = \App\Models\Voyage::class;
+  public static $model = \App\Models\Voyage::class;
 
-    /**
-     * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
-     */
-    public static $title = 'id';
+  public static $title = 'id';
 
-    /**
-     * The columns that should be searched.
-     *
-     * @var array
-     */
-    public static $search = [
-        'id',
+  public static $search = [
+    'id',
+    'lieu_depart',
+    'lieu_arrive',
+  ];
+
+  public function fields(NovaRequest $request)
+  {
+    return [
+      ID::make()->sortable(),
+
+      Text::make('Departure Place', 'lieu_depart')
+        ->sortable(),
+
+      Text::make('Arrival Place', 'lieu_arrive')
+        ->sortable(),
+
+      Date::make('Date', 'date_voyage')
+        ->sortable(),
+
+      Number::make('Number of Places', 'nbr_places')
+        ->sortable(),
+
+      Number::make('Price', 'prix')
+        ->sortable(),
+
+      Text::make('Telephone', 'telephone')
+        ->sortable(),
+
+      BelongsTo::make('User', 'user', 'App\Nova\User')
+        ->sortable(),
+
+      MorphToMany::make('Orders'),
     ];
+  }
 
-    /**
-     * Get the fields displayed by the resource.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return array
-     */
-    public function fields(NovaRequest $request)
-    {
-        return [
-            ID::make()->sortable(),
-            MorphToMany::make('Orders'),
-        ];
-    }
+  public function cards(NovaRequest $request)
+  {
+    return [];
+  }
 
-    /**
-     * Get the cards available for the request.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return array
-     */
-    public function cards(NovaRequest $request)
-    {
-        return [];
-    }
+  public function filters(NovaRequest $request)
+  {
+    return [];
+  }
 
-    /**
-     * Get the filters available for the resource.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return array
-     */
-    public function filters(NovaRequest $request)
-    {
-        return [];
-    }
+  public function lenses(NovaRequest $request)
+  {
+    return [];
+  }
 
-    /**
-     * Get the lenses available for the resource.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return array
-     */
-    public function lenses(NovaRequest $request)
-    {
-        return [];
-    }
-
-    /**
-     * Get the actions available for the resource.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return array
-     */
-    public function actions(NovaRequest $request)
-    {
-        return [];
-    }
+  public function actions(NovaRequest $request)
+  {
+    return [];
+  }
 }
