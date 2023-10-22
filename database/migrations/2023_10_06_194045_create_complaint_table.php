@@ -13,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            $table->string('image')->nullable();
-
+        Schema::create('complaint', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->string('screenshot')->nullable();
+            $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -26,8 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('complaint');
     }
 };

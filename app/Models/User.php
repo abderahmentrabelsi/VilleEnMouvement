@@ -12,6 +12,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
+
 /**
  * @mixin IdeHelperUser
  */
@@ -68,6 +69,17 @@ class User extends Authenticatable
   {
     return $this->belongsToMany(Product::class, 'wishlist', 'user_id', 'product_id');
   }
+
+    // Define the relationship with Complaint model
+    public function complaints()
+    {
+        return $this->hasMany(Complaint::class);
+    }
+    // Define the relationship with Rating model
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
+    }
 
   public function cart()
   {
