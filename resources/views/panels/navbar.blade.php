@@ -77,7 +77,7 @@
 
                   @foreach (auth()->user()->cart as $item)
                     <div class="list-item align-items-center">
-                      <img class="d-block rounded me-1" src="{{ asset($item->image_url) }}" alt="donuts"
+                      <img class="d-block rounded me-1" src="{{ asset("/uploads/" .$item->image_url) }}" alt="donuts"
                            width="62">
                       <div class="list-item-body flex-grow-1">
                         <i class="ficon cart-item-remove" data-feather="x"></i>
