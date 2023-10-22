@@ -14,9 +14,7 @@
   <link rel="stylesheet" href="{{ asset(mix('css/base/plugins/extensions/ext-component-toastr.css')) }}">
 @endsection
 
-@section('content-sidebar')
-  @include('content/apps/ecommerce/app-ecommerce-sidebar')
-@endsection
+
 
 @section('content')
   <!-- E-commerce Content Section Starts -->
