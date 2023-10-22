@@ -97,7 +97,7 @@ Route::middleware(['auth'])->group(function () {
   // Route::get('/posts', [PostController::class,'ShareWidget']);
 //mmn
 Route::resource('vehicules',VehiculeController::class);
-
+// Route::get('vehicules/countries',  [VehiculeController::class, 'showCountries']);
 
   Route::get('/test-database-connection', [DatabaseTestController::class, 'testConnection']);
 

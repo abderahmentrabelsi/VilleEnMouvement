@@ -184,6 +184,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         // custom theme menu provider
         App\Providers\MenuServiceProvider::class,
+        Askedio\Laravel5ProfanityFilter\Providers\ProfanityFilterServiceProvider::class,
     ],
 
     /*
