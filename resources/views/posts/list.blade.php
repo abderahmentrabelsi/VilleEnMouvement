@@ -5,6 +5,39 @@
 @section('vendor-style')
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/animate/animate.min.css')) }}">
     <link rel="stylesheet" href="{{ asset(mix('vendors/css/extensions/sweetalert2.min.css')) }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <style>
+        div#social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+        div#social-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        div#social-links ul li {
+            margin: 0 10px;
+        }          
+        div#social-links ul li a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #fff;
+            background-color: #222;
+            transition: all 0.3s ease-in-out;
+        }
+        div#social-links ul li a:hover {
+            transform: scale(1.2);
+        }
+    </style>
 @endsection
 
 @section('page-style')
@@ -131,6 +164,8 @@
             @endif
             @endif
         </div>
+        {!! $shareComponent !!}
+        <br>
     </div>
 @endforeach
             </div>
