@@ -17,6 +17,19 @@
       "slug": "app-calendar"
     },
     {
+      "url": "posts",
+      "name": "Forum",
+      "icon": "twitter",
+      "slug": "posts-page"
+    },
+    {
+      "url": "vehicules",
+      "name": "Vehicules",
+      "icon": "circle",
+      "slug": "vehicules-page"
+    },
+    
+    {
       "name": "eCommerce",
       "icon": "shopping-cart",
       "badge": 3,
