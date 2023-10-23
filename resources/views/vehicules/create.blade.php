@@ -57,22 +57,28 @@
         @enderror
     </div>
 </div>
-                            <div class="mb-1 row">
-                                <div class="col-sm-3">
-                                    <label class="col-form-label" for="price">Price</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <textarea id="price" class="form-control" name="price" placeholder="Price"></textarea>
-                                </div>
-                            </div>
-                            <div class="mb-1 row">
-                                <div class="col-sm-3">
-                                    <label class="col-form-label" for="plateNumber">plateNumber</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <textarea id="plateNumber" class="form-control" name="plateNumber" placeholder="PlateNumber"></textarea>
-                                </div>
-                            </div>
+<div class="mb-1 row">
+    <div class="col-sm-3">
+        <label class="col-form-label" for="price">Price</label>
+    </div>
+    <div class="col-sm-9">
+        <input id="price" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Price"></input>
+        @error('price')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+<div class="mb-1 row">
+    <div class="col-sm-3">
+        <label class="col-form-label" for="plateNumber">Plate Number</label>
+    </div>
+    <div class="col-sm-9">
+        <input id="plateNumber" class="form-control @error('plateNumber') is-invalid @enderror" name="plateNumber" placeholder="Plate Number"></input>
+        @error('plateNumber')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
 
                        
 
