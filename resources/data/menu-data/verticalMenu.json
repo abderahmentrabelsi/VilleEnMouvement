@@ -8,7 +8,7 @@
       "url": "/voyages",
       "name": "Voyages",
       "icon": "circle",
-      "slug": "dashboard-ecommerce"
+      "slug": "voyages"
     },
     {
       "url": "app/calendar",
