@@ -26,12 +26,10 @@ class VehiculeController extends Controller
             $vehicules->where('model', 'like', '%' . $search . '%');
         }
 
-        $countryService = new CountryService();
-        $countries = $countryService->getCountries();
-    
+       
         $vehicules = $vehicules->paginate(2); // 4 items per page
     
-        return view('vehicules.list', compact('vehicules',"countries"));
+        return view('vehicules.list', compact('vehicules'));
     }
 
     
