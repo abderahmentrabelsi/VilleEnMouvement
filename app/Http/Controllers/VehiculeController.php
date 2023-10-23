@@ -49,6 +49,15 @@ class VehiculeController extends Controller
             'plateNumber' => ['required', 'regex:/^\d+TU\d+$/'],
 
 
+        ], [
+            'model.required' => 'The model field is required.',
+            'model.max' => 'The model may not be greater than :max characters.',
+            'type.required' => 'The type field is required.',
+            'capacity.required' => 'The capacity field is required.',
+            'price.required' => 'The price field is required.',
+            'price.numeric' => 'The price field must be a number.',
+            'plateNumber.required' => 'The plate number field is required.',
+            'plateNumber.regex' => 'The plate number must be in the format: 123TU456.',
         ]);
         $string = app('profanityFilter')->replaceWith('#')->replaceFullWords(false)->filter($validatedData['model']);
         $validatedData['model'] = $string;

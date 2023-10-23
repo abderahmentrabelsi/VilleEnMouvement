@@ -38,6 +38,14 @@ class PostController extends Controller
             'content' => 'required|max:255',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
 
+        ], [
+            'title.required' => 'The title field is required.',
+            'title.max' => 'The title may not be greater than :max characters.',
+            'content.required' => 'The content field is required.',
+            'content.max' => 'The content may not be greater than :max characters.',
+            'image.image' => 'The file must be an image.',
+            'image.mimes' => 'The file must be a file of type: :values.',
+            'image.max' => 'The file may not be greater than :max kilobytes.',
         ]);
 
         // Get the currently authenticated user's ID
