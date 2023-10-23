@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicule;
+use App\Services\CountryService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
@@ -24,7 +25,8 @@ class VehiculeController extends Controller
         if ($search) {
             $vehicules->where('model', 'like', '%' . $search . '%');
         }
-    
+
+       
         $vehicules = $vehicules->paginate(2); // 4 items per page
     
         return view('vehicules.list', compact('vehicules'));
@@ -48,6 +50,8 @@ class VehiculeController extends Controller
 
 
         ]);
+        $string = app('profanityFilter')->replaceWith('#')->replaceFullWords(false)->filter($validatedData['model']);
+        $validatedData['model'] = $string;
 
             // Log the user ID
     $user = auth()->user();
@@ -67,15 +71,7 @@ class VehiculeController extends Controller
     {
        
 
-         // Retrieve the complaint using the given $id only if it belongs to the authenticated user.
-         $vehicule = auth()->user()->vehicules      ->find($id);
-    
-         if (!$vehicule) {
-             // Complaint doesn't exist or doesn't belong to the user.
-             return abort(404);
-         }
-     
-         return view('vehicules.show', compact('vehicule'));
+       //
     }
 
    
@@ -112,6 +108,14 @@ class VehiculeController extends Controller
 
         return redirect()->route('vehicules.index')
             ->with('success', 'vehicule deleted successfully.');
+    }
+
+    public function showCountries()
+    {
+        $countryService = new CountryService();
+        $countries = $countryService->getCountries();
+
+        return view('vehicules.countries', compact('countries'));
     }
     
 }

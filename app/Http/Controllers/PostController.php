@@ -11,8 +11,15 @@ class PostController extends Controller
    
     public function index()
     {
+        $shareComponent = \Share::page("https://laravel.mkadmi.tech/posts", "Welcome To VilleEM!")
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->telegram()
+        ->whatsapp()        
+        ->reddit();
         $posts=Post::all();
-        return view('posts.list', compact('posts'));
+        return view('posts.list', compact('posts',"shareComponent"));
     }
 
     
@@ -101,6 +108,19 @@ class PostController extends Controller
 
         return redirect()->route('posts.index')
             ->with('success', 'Post deleted successfully.');
+    }
+
+    public function ShareWidget()
+    {
+        $shareComponent = \Share::currentPage()
+        ->facebook()
+        ->twitter()
+        ->linkedin()
+        ->telegram()
+        ->whatsapp()        
+        ->reddit();
+        
+        return view('posts.list', compact('shareComponent'));
     }
     
 }

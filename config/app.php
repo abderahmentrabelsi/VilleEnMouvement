@@ -164,6 +164,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Livewire\LivewireServiceProvider::class,
+        Jorenvh\Share\Providers\ShareServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -183,6 +184,7 @@ return [
         App\Providers\JetstreamServiceProvider::class,
         // custom theme menu provider
         App\Providers\MenuServiceProvider::class,
+        Askedio\Laravel5ProfanityFilter\Providers\ProfanityFilterServiceProvider::class,
     ],
 
     /*
@@ -199,6 +201,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // custom theme helper
         'Helper' => App\Helpers\Helpers::class,
+        'Share' => Jorenvh\Share\ShareFacade::class,
     ])->toArray(),
 
 ];

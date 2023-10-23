@@ -38,6 +38,7 @@ namespace App\Models{
 namespace App\Models{
 /**
  * App\Models\Comment
+<<<<<<< HEAD
  *
  * @property int $id
  * @property string $content
@@ -63,26 +64,44 @@ namespace App\Models{
 namespace App\Models{
 /**
  * App\Models\Complaint
+=======
+>>>>>>> c6416d6bf061eda8951d37cb8412008aef5fe244
  *
  * @property int $id
- * @property string $title
- * @property string $description
- * @property string|null $screenshot
+ * @property string $content
+ * @property int $user_id
+ * @property int $post_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+<<<<<<< HEAD
  * @property int|null $user_id
  * @property-read \App\Models\User|null $user
+=======
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment whereContent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment wherePostId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Comment whereUserId($value)
+ * @mixin \Eloquent
+ */
+	class IdeHelperComment {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Complaint
+ *
+ * @property-read \App\Models\User $user
+>>>>>>> c6416d6bf061eda8951d37cb8412008aef5fe244
  * @method static \Database\Factories\ComplaintFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Complaint newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Complaint newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Complaint query()
- * @method static \Illuminate\Database\Eloquent\Builder|Complaint whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Complaint whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Complaint whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Complaint whereScreenshot($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Complaint whereTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Complaint whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Complaint whereUserId($value)
  * @mixin \Eloquent
  */
 	class IdeHelperComplaint {}
@@ -216,10 +235,17 @@ namespace App\Models{
  * @property int $id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+<<<<<<< HEAD
  * @property int $user_id
  * @property string $title
  * @property string $content
  * @property string|null $image
+=======
+ * @property string $title
+ * @property string $content
+ * @property string|null $image
+ * @property int $user_id
+>>>>>>> c6416d6bf061eda8951d37cb8412008aef5fe244
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Comment> $comments
  * @property-read int|null $comments_count
  * @property-read mixed $editing
@@ -278,22 +304,28 @@ namespace App\Models{
 /**
  * App\Models\Rating
  *
+<<<<<<< HEAD
  * @property int $id
  * @property int $user_id
  * @property int $rating_value
  * @property string|null $comments
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+=======
+>>>>>>> c6416d6bf061eda8951d37cb8412008aef5fe244
  * @property-read \App\Models\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|Rating newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rating newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Rating query()
+<<<<<<< HEAD
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereComments($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereRatingValue($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Rating whereUserId($value)
+=======
+>>>>>>> c6416d6bf061eda8951d37cb8412008aef5fe244
  * @mixin \Eloquent
  */
 	class IdeHelperRating {}
@@ -475,7 +507,11 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Order> $orders
  * @property-read int|null $orders_count
+<<<<<<< HEAD
  * @property-read \App\Models\User|null $user
+=======
+ * @property-read \App\Models\User $user
+>>>>>>> c6416d6bf061eda8951d37cb8412008aef5fe244
  * @method static \Illuminate\Database\Eloquent\Builder|Voyage newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Voyage newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Voyage query()

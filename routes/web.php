@@ -5,6 +5,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\SocialShareButtonsController;
 use App\Http\Controllers\VehiculeController;
 use App\Http\Controllers\VoyageController;
 use Illuminate\Support\Facades\Route;
@@ -94,10 +95,10 @@ Route::middleware(['auth'])->group(function () {
   Route::post('/comments', [CommentsController::class, 'store'])->name('comments.store');
   Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
   Route::post('/likes', [LikesController::class, 'store'])->name('likes.store');
-  
+  // Route::get('/posts', [PostController::class,'ShareWidget']);
 //mmn
 Route::resource('vehicules',VehiculeController::class);
-
+// Route::get('vehicules/countries',  [VehiculeController::class, 'showCountries']);
 
   Route::get('/test-database-connection', [DatabaseTestController::class, 'testConnection']);
 
