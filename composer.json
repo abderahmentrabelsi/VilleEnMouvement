@@ -12,10 +12,7 @@
         "askedio/laravel5-profanity-filter": "^1.10",
         "fruitcake/laravel-cors": "^2.0.5",
         "guzzlehttp/guzzle": "^7.8",
-<<<<<<< HEAD
-=======
         "jorenvanhocht/laravel-share": "^4.2",
->>>>>>> c6416d6bf061eda8951d37cb8412008aef5fe244
         "laravel/cashier": "^14.12",
         "laravel/framework": "^9.0",
         "laravel/jetstream": "2.8.5",
