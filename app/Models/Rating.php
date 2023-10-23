@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @mixin IdeHelperRating
+ */
 class Rating extends Model
 {
     protected $table = 'ratings';

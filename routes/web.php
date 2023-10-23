@@ -26,6 +26,7 @@ use App\Http\Controllers\ChartsController;
 use App\Http\Controllers\DatabaseTestController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RatingController;
+use App\Http\Controllers\WeatherController;
 
 //IMPORT WISHLIST CONTROLLER
 use App\Http\Controllers\WishlistController;
@@ -360,8 +361,8 @@ Route::put('/rating/{rating}', [RatingController::class, 'update'])->name('ratin
 
 Route::delete('/rating/{rating}', [RatingController::class, 'destroy'])->name('ratings.destroy');
 
-
 });
+
 
 Route::middleware([
   'auth:sanctum',
@@ -372,3 +373,4 @@ Route::middleware([
     return view('dashboard');
   })->name('dashboard');
 });
+
